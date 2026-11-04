@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: litellm-config
+  namespace: llm-inference
+data:
+  config.yaml: |
+    model_list:
+      - model_name: qwen3-27b
+        litellm_params:
+          model: openai/qwen3-27b
+          api_base: http://llmd-gateway.llm-inference:80
+          api_key: "none"
+          timeout: 120
+          stream_timeout: 120
+    general_settings:
+      master_key: "sk-nebius-bench-1234"
+      num_workers: 4
+      request_timeout: 120
+      drop_params: true
+    litellm_settings:
+      cache: false

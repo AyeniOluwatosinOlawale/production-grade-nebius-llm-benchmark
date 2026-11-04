@@ -1,0 +1,16 @@
+# llm-d InferenceModel — defines model routing rules
+apiVersion: inference.networking.x-k8s.io/v1alpha2
+kind: InferenceModel
+metadata:
+  name: qwen3-27b
+  namespace: llm-inference
+spec:
+  # Must match the served-model-name in vLLM args
+  modelName: qwen3-27b
+
+  # criticality: Default | Critical | Sheddable
+  criticality: Default
+
+  # Reference to the InferencePool
+  poolRef:
+    name: qwen3-pool

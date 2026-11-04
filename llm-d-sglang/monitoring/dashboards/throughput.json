@@ -1,0 +1,267 @@
+{
+  "uid": "llm-throughput-llmd-sglang",
+  "title": "LLM Throughput — nebius-llm-d-sglang",
+  "tags": ["llm", "benchmark", "sglang", "llm-d"],
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "15s",
+  "time": { "from": "now-1h", "to": "now" },
+  "templating": {
+    "list": [
+      {
+        "name": "namespace",
+        "type": "constant",
+        "value": "llm-inference",
+        "hide": 2
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Tokens / Second",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:tokens_per_second",
+          "legendFormat": "tokens/s",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "displayName": "Tokens/s",
+          "color": { "mode": "palette-classic" }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Request Throughput (req/s)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:request_throughput",
+          "legendFormat": "req/s",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "reqps" }
+      }
+    },
+    {
+      "id": 3,
+      "title": "TTFT — Time to First Token (seconds)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 8 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:ttft_p50",
+          "legendFormat": "p50",
+          "refId": "A"
+        },
+        {
+          "expr": "llm:ttft_p95",
+          "legendFormat": "p95",
+          "refId": "B"
+        },
+        {
+          "expr": "llm:ttft_p99",
+          "legendFormat": "p99",
+          "refId": "C"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "s" }
+      }
+    },
+    {
+      "id": 4,
+      "title": "TPOT — Time Per Output Token (seconds)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:tpot_p50",
+          "legendFormat": "p50",
+          "refId": "A"
+        },
+        {
+          "expr": "llm:tpot_p95",
+          "legendFormat": "p95",
+          "refId": "B"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "s" }
+      }
+    },
+    {
+      "id": 5,
+      "title": "E2E Request Latency (seconds)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:e2e_latency_p95",
+          "legendFormat": "p95",
+          "refId": "A"
+        },
+        {
+          "expr": "llm:e2e_latency_p99",
+          "legendFormat": "p99",
+          "refId": "B"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "s" }
+      }
+    },
+    {
+      "id": 6,
+      "title": "KV Cache Utilisation",
+      "type": "gauge",
+      "gridPos": { "h": 8, "w": 6, "x": 0, "y": 24 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:kv_cache_util",
+          "legendFormat": "KV Cache",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "min": 0,
+          "max": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 0.75 },
+              { "color": "red", "value": 0.90 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "GPU Utilisation",
+      "type": "gauge",
+      "gridPos": { "h": 8, "w": 6, "x": 6, "y": 24 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:gpu_util",
+          "legendFormat": "GPU Util",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 70 },
+              { "color": "red", "value": 90 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "GPU VRAM Used (GiB)",
+      "type": "gauge",
+      "gridPos": { "h": 8, "w": 6, "x": 12, "y": 24 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:gpu_vram_used_gib",
+          "legendFormat": "VRAM Used",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "decgbytes",
+          "min": 0,
+          "max": 80
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Requests Waiting (queue depth)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 6, "x": 18, "y": 24 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "llm:requests_waiting",
+          "legendFormat": "waiting",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 5 },
+              { "color": "red", "value": 20 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "SGLang Replica Count",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 32 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "count(up{job=\"sglang-pods\", namespace=\"llm-inference\"} == 1)",
+          "legendFormat": "replicas",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "displayName": "Active Replicas"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Benchmark Suite",
+      "type": "text",
+      "gridPos": { "h": 4, "w": 18, "x": 6, "y": 32 },
+      "options": {
+        "mode": "markdown",
+        "content": "**nebius-llm-d-sglang** | Stack: LiteLLM → llm-d → SGLang | Model: Qwen3-27B | tp=2 BF16 | Nebius H100 preemptible\n\nKEDA trigger: `sglang:num_requests_waiting > 5` | Scale range: 2–8 replicas"
+      }
+    }
+  ]
+}

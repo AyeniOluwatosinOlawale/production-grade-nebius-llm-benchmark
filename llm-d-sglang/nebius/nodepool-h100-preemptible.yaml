@@ -1,0 +1,63 @@
+---
+# Nebius H100 preemptible node pool manifest.
+# Apply via Nebius Console / Terraform / nebius CLI — this YAML is declarative
+# documentation of the pool configuration used by the benchmark suite.
+#
+# Key settings:
+#   - Preemptible VMs: ~70% cheaper than on-demand; tolerated by all SGLang pods
+#   - gpu_cluster: enables NVLink/NVSwitch for multi-GPU tensor parallelism (tp=2)
+#   - disk_type: NETWORK_SSD for fast model-weight loading on node restart
+apiVersion: nebius.com/v1alpha1
+kind: NodeGroup
+metadata:
+  name: gpu-h100-preemptible
+  namespace: default
+  labels:
+    benchmark-suite: nebius-llm-d-sglang
+    tier: inference
+spec:
+  clusterRef:
+    name: nebius-inference-cluster
+
+  nodeTemplate:
+    metadata:
+      labels:
+        nvidia.com/gpu.present: "true"
+        node-role: gpu-inference
+        engine: sglang
+      annotations:
+        node.kubernetes.io/instance-type: "gpu-h100-sxm"
+
+    spec:
+      preemptible: true
+
+      resources:
+        platform: gpu-h100-sxm
+        preset: 2gpu-20vcpu-160gb   # 2×H100 SXM, 20 vCPU, 160 GiB RAM per node
+
+      bootDisk:
+        type: NETWORK_SSD
+        sizeGib: 200
+
+      gpuSettings:
+        gpuClusterEnabled: true     # NVLink fabric for tp=2 within-node comms
+
+      networkInterfaces:
+        - subnetRef:
+            name: nebius-inference-subnet
+
+      # Taints applied automatically by Nebius to all preemptible GPU nodes.
+      # SGLang pods carry matching tolerations in sglang/deployment.yaml.
+      taints:
+        - key: cloud.nebius.ai/preemptible
+          effect: NoSchedule
+        - key: nvidia.com/gpu
+          effect: NoSchedule
+
+  scalePolicy:
+    fixedScale:
+      size: 4                       # 4 nodes × 2 GPUs = 8 GPUs; supports up to 4 replicas at tp=2
+
+  allocationPolicy:
+    zones:
+      - name: eu-north1-c           # Choose zone with H100 SXM availability in Nebius

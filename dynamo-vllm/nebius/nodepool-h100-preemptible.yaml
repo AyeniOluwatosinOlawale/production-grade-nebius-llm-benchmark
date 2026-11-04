@@ -1,0 +1,34 @@
+# Nebius MK8S Node Group — H100 SXM5 preemptible
+# Apply via: nebius mk8s node-group create --config nodepool-h100-preemptible.yaml
+apiVersion: mk8s.nebius.ai/v1alpha1
+kind: NodeGroup
+metadata:
+  name: gpu-h100-preemptible
+spec:
+  clusterRef:
+    name: REPLACE_WITH_YOUR_CLUSTER_ID
+  template:
+    spec:
+      resources:
+        platform: gpu-h100-sxm
+        preset: 8gpu-128vcpu-1600gb
+      bootDisk:
+        type: network-ssd
+        sizeGib: 200
+      preemptible: true
+      gpuSettings:
+        gpuClusterRef:
+          name: gpu-cluster-h100
+  autoScale:
+    minSize: 1
+    maxSize: 4
+  nodeLabels:
+    nebius.com/node-group: gpu-h100-preemptible
+    nvidia.com/gpu.present: "true"
+  nodeTaints:
+    - key: nvidia.com/gpu
+      value: present
+      effect: NoSchedule
+    - key: cloud.nebius.ai/preemptible
+      value: "true"
+      effect: NoSchedule

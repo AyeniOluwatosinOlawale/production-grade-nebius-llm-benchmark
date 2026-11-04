@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: litellm-svc
+  namespace: llm-inference
+  labels:
+    app: litellm
+spec:
+  type: LoadBalancer
+  selector:
+    app: litellm
+  ports:
+    - name: http
+      port: 4000
+      targetPort: 4000
+      protocol: TCP

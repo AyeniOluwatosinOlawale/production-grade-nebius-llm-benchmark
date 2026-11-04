@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dynamo-pipeline-config
+  namespace: llm-inference
+data:
+  pipeline.yaml: |
+    components:
+      Frontend:
+        type: Router
+        config:
+          backend: TrtllmWorker
+      TrtllmWorker:
+        type: TrtllmWorker
+        config:
+          model: "Qwen/Qwen3-27B"
+          tp: 2
+          disaggregated_prefill: true
+          prefill_queue: "nats://nats.llm-inference:4222"
+          kv_state_store: "etcd://etcd.llm-inference:2379"

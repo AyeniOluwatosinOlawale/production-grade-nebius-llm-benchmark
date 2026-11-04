@@ -1,0 +1,65 @@
+# KEDA Helm values
+# helm install keda kedacore/keda -n keda -f monitoring/keda/values.yaml
+
+replicaCount: 2
+
+image:
+  keda:
+    repository: ghcr.io/kedacore/keda
+    tag: ""  # uses chart appVersion
+  metricsApiServer:
+    repository: ghcr.io/kedacore/keda-metrics-apiserver
+    tag: ""
+  webhooks:
+    repository: ghcr.io/kedacore/keda-admission-webhooks
+    tag: ""
+
+resources:
+  operator:
+    limits:
+      cpu: "1"
+      memory: 1000Mi
+    requests:
+      cpu: 100m
+      memory: 100Mi
+  metricServer:
+    limits:
+      cpu: "1"
+      memory: 1000Mi
+    requests:
+      cpu: 100m
+      memory: 100Mi
+  webhooks:
+    limits:
+      cpu: 500m
+      memory: 200Mi
+    requests:
+      cpu: 50m
+      memory: 50Mi
+
+prometheus:
+  operator:
+    enabled: true
+    podMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+  metricServer:
+    enabled: true
+    podMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+  webhooks:
+    enabled: true
+    podMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+
+logging:
+  operator:
+    level: info
+    format: console
+  metricServer:
+    level: 0

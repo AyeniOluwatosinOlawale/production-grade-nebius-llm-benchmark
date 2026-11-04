@@ -1,0 +1,51 @@
+nameOverride: kube-prometheus-stack
+prometheus:
+  prometheusSpec:
+    retention: 30d
+    retentionSize: "50GB"
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: nebius-network-ssd
+          accessModes: [ReadWriteOnce]
+          resources:
+            requests:
+              storage: 100Gi
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector: {}
+    serviceMonitorNamespaceSelector: {}
+    podMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelector: {}
+    podMonitorNamespaceSelector: {}
+    ruleSelectorNilUsesHelmValues: false
+    ruleSelector: {}
+    ruleNamespaceSelector: {}
+    resources:
+      requests:
+        cpu: 500m
+        memory: 2Gi
+      limits:
+        cpu: 2
+        memory: 8Gi
+grafana:
+  enabled: true
+  adminPassword: "nebius-llm-bench"
+  persistence:
+    enabled: true
+    storageClassName: nebius-network-ssd
+    size: 20Gi
+  service:
+    type: LoadBalancer
+    port: 3000
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+      labelValue: "1"
+      searchNamespace: monitoring
+alertmanager:
+  enabled: true
+kube-state-metrics:
+  enabled: true
+nodeExporter:
+  enabled: true

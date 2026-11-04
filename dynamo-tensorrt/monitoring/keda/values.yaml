@@ -1,0 +1,48 @@
+replicaCount: 1
+
+operator:
+  replicaCount: 1
+
+metricsServer:
+  replicaCount: 1
+
+prometheus:
+  metricServer:
+    enabled: true
+    port: 9022
+    portName: metrics
+    path: /metrics
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+  operator:
+    enabled: true
+    port: 8080
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+  webhooks:
+    enabled: true
+    port: 8080
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+
+resources:
+  operator:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+  metricsServer:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi

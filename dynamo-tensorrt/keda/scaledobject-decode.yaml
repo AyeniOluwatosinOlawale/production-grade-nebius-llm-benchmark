@@ -1,0 +1,27 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: dynamo-tensorrt-decode-scaler
+  namespace: llm-inference
+spec:
+  scaleTargetRef:
+    name: dynamo-tensorrt-decode
+  minReplicaCount: 2
+  maxReplicaCount: 8
+  cooldownPeriod: 300
+  pollingInterval: 15
+  triggers:
+    - type: prometheus
+      metadata:
+        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
+        metricName: trtllm_request_queue_size
+        query: |
+          sum(trtllm:request_queue_size{namespace="llm-inference"})
+        threshold: "5"
+    - type: prometheus
+      metadata:
+        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
+        metricName: DCGM_FI_DEV_GPU_UTIL_decode_avg
+        query: |
+          avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference",pod=~"dynamo-tensorrt-decode-.*"})
+        threshold: "70"

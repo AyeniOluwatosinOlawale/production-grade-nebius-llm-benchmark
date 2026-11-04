@@ -1,0 +1,33 @@
+image:
+  repository: nvcr.io/nvidia/k8s/dcgm-exporter
+  tag: 3.3.6-3.4.2-ubuntu22.04
+  pullPolicy: IfNotPresent
+
+serviceMonitor:
+  enabled: true
+  additionalLabels:
+    release: kube-prometheus-stack
+  interval: 15s
+
+tolerations:
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule
+  - key: cloud.nebius.ai/preemptible
+    operator: Exists
+    effect: NoSchedule
+
+nodeSelector:
+  nvidia.com/gpu.present: "true"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+extraEnv:
+  - name: DCGM_EXPORTER_COLLECTORS
+    value: "/etc/dcgm-exporter/dcp-metrics-included.csv"

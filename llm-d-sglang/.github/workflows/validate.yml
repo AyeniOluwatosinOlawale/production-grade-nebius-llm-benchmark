@@ -1,0 +1,98 @@
+name: Validate Manifests
+
+on:
+  push:
+    branches: ["main", "dev"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  yaml-lint:
+    name: YAML Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install yamllint
+        run: pip install yamllint
+
+      - name: Lint all YAML files
+        run: |
+          yamllint -d "{extends: default, rules: {line-length: {max: 200}, truthy: {allowed-values: ['true', 'false']}}}" \
+            $(find . -name "*.yaml" -o -name "*.yml" | grep -v node_modules | grep -v ".github/workflows")
+
+  kubeval:
+    name: Kubeval
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install kubeval
+        run: |
+          wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+          tar xf kubeval-linux-amd64.tar.gz
+          sudo mv kubeval /usr/local/bin/
+
+      - name: Validate core Kubernetes manifests
+        run: |
+          kubeval --ignore-missing-schemas \
+            sglang/pvc.yaml \
+            sglang/deployment.yaml \
+            sglang/service.yaml \
+            litellm/configmap.yaml \
+            litellm/deployment.yaml \
+            litellm/service.yaml \
+            monitoring/namespaces.yaml \
+            keda/scaledobject.yaml
+
+  helm-lint:
+    name: Helm Values Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: "3.14.0"
+
+      - name: Add required Helm repos
+        run: |
+          helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+          helm repo add kedacore https://kedacore.github.io/charts
+          helm repo update
+
+      - name: Lint kube-prometheus-stack values
+        run: |
+          helm lint prometheus-community/kube-prometheus-stack \
+            --values monitoring/kube-prometheus-stack/values.yaml \
+            --set prometheus-node-exporter.hostRootFsMount.enabled=false \
+            2>/dev/null || true
+
+      - name: Lint KEDA values
+        run: |
+          helm lint kedacore/keda \
+            --values monitoring/keda/values.yaml \
+            2>/dev/null || true
+
+  k6-syntax:
+    name: k6 Script Syntax Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install k6
+        run: |
+          sudo gpg -k
+          sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg \
+            --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" \
+            | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt-get update
+          sudo apt-get install k6
+
+      - name: Validate smoke test syntax
+        run: k6 inspect load-test/smoke-test.js
+
+      - name: Validate ramp test syntax
+        run: k6 inspect load-test/load-10k-ramp.js

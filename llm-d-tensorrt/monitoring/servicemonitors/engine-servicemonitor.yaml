@@ -1,0 +1,21 @@
+# TensorRT-LLM Triton metrics are exposed on port 8002
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: tensorrt-metrics
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  namespaceSelector:
+    matchNames:
+      - llm-inference
+  selector:
+    matchLabels:
+      app: tensorrt-qwen3
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 15s
+      scrapeTimeout: 10s
+      honorLabels: true

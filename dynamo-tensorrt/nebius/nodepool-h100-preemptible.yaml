@@ -1,0 +1,12 @@
+apiVersion: mk8s.nebius.ai/v1alpha1
+kind: NodeGroup
+metadata:
+  name: h100-preemptible
+spec:
+  resources:
+    platform: gpu-h100-sxm
+    preset: 8gpu-128vcpu-1600gb
+  annotations:
+    cloud.nebius.ai/preemptible: "true"
+  minNodeCount: 1
+  maxNodeCount: 4

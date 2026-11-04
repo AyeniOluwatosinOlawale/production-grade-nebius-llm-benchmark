@@ -1,0 +1,122 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm-decode
+  namespace: llm-inference
+  labels:
+    app: vllm-decode
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vllm-decode
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: vllm-decode
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      tolerations:
+        - key: cloud.nebius.ai/preemptible
+          operator: Exists
+          effect: NoSchedule
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+      nodeSelector:
+        nvidia.com/gpu.present: "true"
+      terminationGracePeriodSeconds: 120
+      containers:
+        - name: vllm-decode
+          image: vllm/vllm-openai:v0.33.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+              name: http
+          env:
+            - name: HF_HOME
+              value: /models
+            - name: HUGGING_FACE_HUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+                  optional: true
+            - name: VLLM_WORKER_MULTIPROC_METHOD
+              value: spawn
+            - name: DYNAMO_ROLE
+              value: decode
+            - name: NATS_URL
+              value: "nats://nats.llm-inference:4222"
+            - name: ETCD_ENDPOINTS
+              value: "etcd.llm-inference:2379"
+          args:
+            - --model=Qwen/Qwen3-27B
+            - --tensor-parallel-size=2
+            - --dtype=bfloat16
+            - --max-model-len=32768
+            - --gpu-memory-utilization=0.90
+            - --served-model-name=qwen3-27b
+            - --port=8000
+            - --host=0.0.0.0
+            - --enable-chunked-prefill
+            - --max-num-seqs=256
+          resources:
+            requests:
+              nvidia.com/gpu: "2"
+              memory: "160Gi"
+              cpu: "8"
+            limits:
+              nvidia.com/gpu: "2"
+              memory: "200Gi"
+              cpu: "32"
+          volumeMounts:
+            - name: model-cache
+              mountPath: /models
+            - name: shm
+              mountPath: /dev/shm
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 300
+            periodSeconds: 30
+            failureThreshold: 20
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 600
+            periodSeconds: 30
+            failureThreshold: 5
+      volumes:
+        - name: model-cache
+          persistentVolumeClaim:
+            claimName: vllm-model-cache
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 32Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vllm-decode
+  namespace: llm-inference
+  labels:
+    app: vllm-decode
+spec:
+  selector:
+    app: vllm-decode
+  ports:
+    - port: 8000
+      targetPort: 8000
+      name: http

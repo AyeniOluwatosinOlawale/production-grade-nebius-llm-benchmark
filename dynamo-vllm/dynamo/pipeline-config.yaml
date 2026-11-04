@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dynamo-pipeline-config
+  namespace: llm-inference
+data:
+  pipeline.yaml: |
+    Common:
+      model: Qwen/Qwen3-27B
+      block_size: 16
+      dtype: bfloat16
+      tensor_parallel_size: 2
+      max_model_len: 32768
+
+    Frontend:
+      type: openai
+      host: "0.0.0.0"
+      port: 8080
+      num_workers: 1
+
+    Processor:
+      type: VllmWorker
+      ServiceArgs:
+        num_workers: 2
+      gpu_memory_utilization: 0.85
+      max_num_seqs: 64
+      enable_disagg_prefill: true
+      disagg_role: prefill
+
+    Backend:
+      type: VllmWorker
+      ServiceArgs:
+        num_workers: 4
+      gpu_memory_utilization: 0.90
+      max_num_seqs: 256
+      enable_disagg_prefill: true
+      disagg_role: decode
+
+    NatsConfig:
+      url: "nats://nats.llm-inference:4222"
+
+    EtcdConfig:
+      endpoints:
+        - "etcd.llm-inference:2379"

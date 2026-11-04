@@ -1,0 +1,19 @@
+# PVC for caching Qwen3-27B model weights (~55GB for BF16)
+# Use ReadWriteOnce — one PVC per vLLM pod via volumeClaimTemplates in StatefulSet
+# or a single shared RWX PVC if your storage class supports it.
+# Using Deployment + single RWO PVC here for simplicity (all replicas on same node).
+# For multi-node deployments, use a Nebius NFS-backed RWX PVC.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vllm-model-cache
+  namespace: llm-inference
+  labels:
+    app: vllm-qwen3
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: nebius-network-ssd

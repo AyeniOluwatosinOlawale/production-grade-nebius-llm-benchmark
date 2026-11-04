@@ -1,0 +1,15 @@
+apiVersion: inference.networking.x-k8s.io/v1alpha2
+kind: InferencePool
+metadata:
+  name: qwen3-pool
+  namespace: llm-inference
+spec:
+  targetPortNumber: 8000
+  selector:
+    matchLabels:
+      app: tensorrt-qwen3
+  extensionRef:
+    group: inference.networking.x-k8s.io
+    kind: InferenceExtension
+    name: llm-d-epp
+    namespace: llm-d-system

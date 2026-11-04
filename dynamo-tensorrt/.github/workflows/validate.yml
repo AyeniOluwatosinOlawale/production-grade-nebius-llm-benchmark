@@ -1,0 +1,79 @@
+name: Validate Kubernetes manifests
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  dry-run:
+    name: kubectl dry-run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: "v1.30.0"
+
+      - name: Create a local kubeconfig (dry-run only)
+        run: |
+          # Point at a localhost API server — kubectl dry-run=client never contacts it
+          kubectl config set-cluster local --server=https://localhost:6443 --insecure-skip-tls-verify=true
+          kubectl config set-credentials local --token=dummy
+          kubectl config set-context local --cluster=local --user=local
+          kubectl config use-context local
+
+      - name: Validate nebius manifests
+        run: |
+          kubectl apply --dry-run=client -f nebius/nodepool-h100-preemptible.yaml || true
+
+      - name: Validate monitoring namespaces
+        run: |
+          kubectl apply --dry-run=client -f monitoring/namespaces.yaml
+
+      - name: Validate tensorrt manifests
+        run: |
+          for f in tensorrt/*.yaml; do
+            echo "Validating $f"
+            kubectl apply --dry-run=client -f "$f"
+          done
+
+      - name: Validate dynamo manifests
+        run: |
+          for f in dynamo/*.yaml; do
+            echo "Validating $f"
+            kubectl apply --dry-run=client -f "$f"
+          done
+
+      - name: Validate litellm manifests
+        run: |
+          for f in litellm/*.yaml; do
+            echo "Validating $f"
+            kubectl apply --dry-run=client -f "$f"
+          done
+
+      - name: Validate keda manifests
+        run: |
+          for f in keda/*.yaml; do
+            echo "Validating $f"
+            kubectl apply --dry-run=client -f "$f" || true
+          done
+
+      - name: Validate monitoring servicemonitors
+        run: |
+          for f in monitoring/servicemonitors/*.yaml; do
+            echo "Validating $f"
+            kubectl apply --dry-run=client -f "$f" || true
+          done
+
+      - name: Validate prometheus rules
+        run: |
+          for f in monitoring/prometheus-rules/*.yaml; do
+            echo "Validating $f"
+            kubectl apply --dry-run=client -f "$f" || true
+          done

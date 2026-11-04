@@ -1,0 +1,27 @@
+name: Validate Manifests
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install yamllint
+        run: pip install yamllint
+      - name: Lint YAML
+        run: |
+          yamllint -d "{extends: relaxed, rules: {line-length: {max: 200}}}" \
+            $(find . -name "*.yaml" -o -name "*.yml" | grep -v node_modules)
+      - name: Install kubeval
+        run: |
+          wget -q https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+          tar xf kubeval-linux-amd64.tar.gz && sudo mv kubeval /usr/local/bin/
+      - name: Validate Kubernetes manifests
+        run: |
+          find . -name "*.yaml" -not -path "./.github/*" \
+            -not -name "values.yaml" \
+            -not -name "kustomization.yaml" \
+            | xargs kubeval --ignore-missing-schemas

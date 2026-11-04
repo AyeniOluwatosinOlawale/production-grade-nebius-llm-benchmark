@@ -1,0 +1,21 @@
+# llm-d InferencePool — pools the vLLM pods behind the Gateway
+apiVersion: inference.networking.x-k8s.io/v1alpha2
+kind: InferencePool
+metadata:
+  name: qwen3-pool
+  namespace: llm-inference
+spec:
+  # Port that vLLM serves on
+  targetPortNumber: 8000
+
+  # Select all vLLM replica pods
+  selector:
+    matchLabels:
+      app: vllm-qwen3
+
+  # Reference to the llm-d EndpointPickerPolicy (EPP) extension
+  extensionRef:
+    group: inference.networking.x-k8s.io
+    kind: InferenceExtension
+    name: llm-d-epp
+    namespace: llm-d-system

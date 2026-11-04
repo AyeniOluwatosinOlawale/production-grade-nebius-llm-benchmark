@@ -1,0 +1,40 @@
+# KEDA Helm values
+# helm install keda kedacore/keda \
+#   -n keda -f monitoring/keda/values.yaml
+
+# Keep KEDA in its own namespace
+watchNamespace: ""
+
+# Resources for KEDA operator
+resources:
+  operator:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+  metricServer:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+# Prometheus metrics for KEDA itself
+prometheus:
+  operator:
+    enabled: true
+    podMonitor:
+      enabled: true
+      namespace: monitoring
+      additionalLabels:
+        release: kube-prometheus-stack
+  metricServer:
+    enabled: true
+    podMonitor:
+      enabled: true
+      namespace: monitoring
+      additionalLabels:
+        release: kube-prometheus-stack

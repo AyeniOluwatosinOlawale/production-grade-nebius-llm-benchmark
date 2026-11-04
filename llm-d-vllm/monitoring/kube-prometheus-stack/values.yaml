@@ -1,0 +1,80 @@
+# kube-prometheus-stack Helm values
+# helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
+#   -n monitoring -f monitoring/kube-prometheus-stack/values.yaml
+
+nameOverride: kube-prometheus-stack
+
+prometheus:
+  prometheusSpec:
+    retention: 30d
+    retentionSize: "50GB"
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: nebius-network-ssd
+          accessModes: [ReadWriteOnce]
+          resources:
+            requests:
+              storage: 100Gi
+    # Scrape all ServiceMonitors across namespaces
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector: {}
+    serviceMonitorNamespaceSelector: {}
+    # Scrape all PodMonitors
+    podMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelector: {}
+    podMonitorNamespaceSelector: {}
+    # Load recording rules from all namespaces
+    ruleSelectorNilUsesHelmValues: false
+    ruleSelector: {}
+    ruleNamespaceSelector: {}
+    resources:
+      requests:
+        cpu: 500m
+        memory: 2Gi
+      limits:
+        cpu: 2
+        memory: 8Gi
+
+grafana:
+  enabled: true
+  adminPassword: "nebius-llm-bench"
+  persistence:
+    enabled: true
+    storageClassName: nebius-network-ssd
+    size: 20Gi
+  service:
+    type: LoadBalancer
+    port: 3000
+  # Auto-load dashboards from ConfigMaps with this label
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+      labelValue: "1"
+      searchNamespace: monitoring
+  grafana.ini:
+    server:
+      root_url: "%(protocol)s://%(domain)s:%(http_port)s"
+    auth.anonymous:
+      enabled: false
+
+alertmanager:
+  enabled: true
+  alertmanagerSpec:
+    storage:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: nebius-network-ssd
+          accessModes: [ReadWriteOnce]
+          resources:
+            requests:
+              storage: 10Gi
+
+# Scrape kube-state-metrics for replica count panels
+kube-state-metrics:
+  enabled: true
+
+# Node exporter for host metrics
+nodeExporter:
+  enabled: true

@@ -1,0 +1,38 @@
+image:
+  repository: nvcr.io/nvidia/k8s/dcgm-exporter
+  tag: 3.3.0-3.2.0-ubuntu22.04
+  pullPolicy: IfNotPresent
+arguments:
+  - -f
+  - /etc/dcgm-exporter/dcgm-metrics.csv
+extraConfigMapData:
+  dcgm-metrics.csv: |
+    DCGM_FI_DEV_GPU_UTIL, gauge, GPU utilization (%)
+    DCGM_FI_DEV_FB_FREE, gauge, Framebuffer memory free (MiB)
+    DCGM_FI_DEV_FB_USED, gauge, Framebuffer memory used (MiB)
+    DCGM_FI_DEV_FB_TOTAL, gauge, Framebuffer memory total (MiB)
+    DCGM_FI_DEV_POWER_USAGE, gauge, Power usage (W)
+    DCGM_FI_DEV_GPU_TEMP, gauge, GPU temperature (C)
+    DCGM_FI_DEV_NVLINK_BANDWIDTH_TOTAL, counter, NVLink bandwidth total
+    DCGM_FI_PROF_SM_OCCUPANCY, gauge, SM occupancy (%)
+    DCGM_FI_PROF_SM_ACTIVE, gauge, SM active ratio
+serviceMonitor:
+  enabled: true
+  additionalLabels:
+    release: kube-prometheus-stack
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+tolerations:
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule
+  - key: cloud.nebius.ai/preemptible
+    operator: Exists
+    effect: NoSchedule
+nodeSelector:
+  nvidia.com/gpu.present: "true"

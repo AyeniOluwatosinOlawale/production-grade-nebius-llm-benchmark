@@ -1,0 +1,103 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dynamo-tensorrt-decode
+  namespace: llm-inference
+  labels:
+    app: dynamo-tensorrt-decode
+    dynamo-role: decode
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dynamo-tensorrt-decode
+  template:
+    metadata:
+      labels:
+        app: dynamo-tensorrt-decode
+        dynamo-role: decode
+    spec:
+      terminationGracePeriodSeconds: 120
+      nodeSelector:
+        nvidia.com/gpu.present: "true"
+      tolerations:
+        - key: cloud.nebius.ai/preemptible
+          operator: Exists
+          effect: NoSchedule
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+      containers:
+        - name: decode-worker
+          image: nvcr.io/nvidia/tritonserver:26.10-trtllm-python-py3
+          command: ["trtllm-serve"]
+          args:
+            - "Qwen/Qwen3-27B"
+            - "--tp=2"
+            - "--dtype=bfloat16"
+            - "--max_seq_len=32768"
+            - "--port=8000"
+            - "--host=0.0.0.0"
+            - "--disaggregated-decode"
+            - "--kv_cache_free_gpu_mem_fraction=0.90"
+            - "--max_num_tokens=8192"
+          env:
+            - name: DYNAMO_ROLE
+              value: decode
+            - name: NATS_URL
+              value: "nats://nats.llm-inference:4222"
+            - name: ETCD_ENDPOINTS
+              value: "etcd.llm-inference:2379"
+            - name: HF_HOME
+              value: /models
+            - name: HUGGING_FACE_HUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+            - name: grpc
+              containerPort: 8001
+              protocol: TCP
+            - name: metrics
+              containerPort: 8002
+              protocol: TCP
+          resources:
+            requests:
+              nvidia.com/gpu: "2"
+              memory: "160Gi"
+              cpu: "8"
+            limits:
+              nvidia.com/gpu: "2"
+              memory: "200Gi"
+              cpu: "32"
+          volumeMounts:
+            - name: model-cache
+              mountPath: /models
+            - name: shm
+              mountPath: /dev/shm
+          readinessProbe:
+            httpGet:
+              path: /v2/health/ready
+              port: 8000
+            initialDelaySeconds: 300
+            periodSeconds: 30
+            failureThreshold: 20
+          livenessProbe:
+            httpGet:
+              path: /v2/health/live
+              port: 8000
+            initialDelaySeconds: 600
+            periodSeconds: 30
+            failureThreshold: 5
+      volumes:
+        - name: model-cache
+          persistentVolumeClaim:
+            claimName: tensorrt-model-cache
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 32Gi

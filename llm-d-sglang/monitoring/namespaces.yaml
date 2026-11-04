@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: llm-inference
+  labels:
+    purpose: inference
+    benchmark-suite: nebius-llm-d-sglang
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+  labels:
+    purpose: observability
+    benchmark-suite: nebius-llm-d-sglang
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: llm-d-system
+  labels:
+    purpose: llm-d-controller
+    benchmark-suite: nebius-llm-d-sglang
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: keda
+  labels:
+    purpose: autoscaling
+    benchmark-suite: nebius-llm-d-sglang

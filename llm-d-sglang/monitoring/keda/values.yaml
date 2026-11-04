@@ -1,0 +1,78 @@
+# KEDA Helm values
+# helm repo add kedacore https://kedacore.github.io/charts
+# helm upgrade --install keda kedacore/keda \
+#   -n keda --create-namespace -f monitoring/keda/values.yaml
+
+nameOverride: keda
+
+operator:
+  replicaCount: 1
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1000m
+      memory: 1000Mi
+
+metricsServer:
+  replicaCount: 1
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1000m
+      memory: 1000Mi
+
+webhooks:
+  enabled: true
+  replicaCount: 1
+
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+
+# Allow KEDA to watch ScaledObjects in all namespaces
+watchNamespace: ""
+
+logging:
+  operator:
+    level: info
+    format: json
+  metricServer:
+    level: 0
+  webhooks:
+    level: info
+    format: json
+
+prometheus:
+  metricServer:
+    enabled: true
+    port: 9022
+    portName: metrics
+    path: /metrics
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+  operator:
+    enabled: true
+    port: 8080
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack
+  webhooks:
+    enabled: true
+    port: 8080
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        release: kube-prometheus-stack

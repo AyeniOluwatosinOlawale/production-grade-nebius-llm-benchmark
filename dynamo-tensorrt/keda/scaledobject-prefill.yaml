@@ -1,0 +1,20 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: dynamo-tensorrt-prefill-scaler
+  namespace: llm-inference
+spec:
+  scaleTargetRef:
+    name: dynamo-tensorrt-prefill
+  minReplicaCount: 1
+  maxReplicaCount: 4
+  cooldownPeriod: 300
+  pollingInterval: 15
+  triggers:
+    - type: prometheus
+      metadata:
+        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
+        metricName: DCGM_FI_DEV_GPU_UTIL_prefill_avg
+        query: |
+          avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference",pod=~"dynamo-tensorrt-prefill-.*"})
+        threshold: "70"

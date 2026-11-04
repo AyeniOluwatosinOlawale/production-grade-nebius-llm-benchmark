@@ -1,0 +1,205 @@
+{
+  "uid": "gpu-overview-nebius",
+  "title": "GPU Overview — Nebius H100",
+  "tags": ["gpu", "dcgm", "nebius", "benchmark"],
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "15s",
+  "time": { "from": "now-1h", "to": "now" },
+  "templating": {
+    "list": [
+      {
+        "name": "namespace",
+        "type": "query",
+        "datasource": "Prometheus",
+        "query": "label_values(DCGM_FI_DEV_GPU_UTIL, namespace)",
+        "current": { "value": "llm-inference" },
+        "hide": 0,
+        "multi": false
+      },
+      {
+        "name": "pod",
+        "type": "query",
+        "datasource": "Prometheus",
+        "query": "label_values(DCGM_FI_DEV_GPU_UTIL{namespace=\"$namespace\"}, pod)",
+        "hide": 0,
+        "multi": true,
+        "includeAll": true
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "GPU Utilisation (%)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_GPU_UTIL{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "legendFormat": "{{pod}} gpu{{gpu}}",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 70 },
+              { "color": "red", "value": 90 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "VRAM Used (GiB)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_FB_USED{namespace=\"$namespace\", pod=~\"$pod\"} / 1024",
+          "legendFormat": "{{pod}} gpu{{gpu}} used",
+          "refId": "A"
+        },
+        {
+          "expr": "DCGM_FI_DEV_FB_TOTAL{namespace=\"$namespace\", pod=~\"$pod\"} / 1024",
+          "legendFormat": "{{pod}} gpu{{gpu}} total",
+          "refId": "B"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "decgbytes" }
+      }
+    },
+    {
+      "id": 3,
+      "title": "GPU Temperature (°C)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_GPU_TEMP{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "legendFormat": "{{pod}} gpu{{gpu}}",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 75 },
+              { "color": "red", "value": 85 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Power Draw (W)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_POWER_USAGE{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "legendFormat": "{{pod}} gpu{{gpu}}",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "watt" }
+      }
+    },
+    {
+      "id": 5,
+      "title": "NVLink Bandwidth Total (MB/s)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(DCGM_FI_DEV_NVLINK_BANDWIDTH_TOTAL{namespace=\"$namespace\", pod=~\"$pod\"}[1m])",
+          "legendFormat": "{{pod}} gpu{{gpu}}",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "MBs" }
+      }
+    },
+    {
+      "id": 6,
+      "title": "ECC Double-Bit Errors (volatile)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "increase(DCGM_FI_DEV_ECC_DBE_VOL_TOTAL{namespace=\"$namespace\", pod=~\"$pod\"}[5m])",
+          "legendFormat": "{{pod}} gpu{{gpu}} DBE",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red", "value": 1 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "SM Clock (MHz)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 24 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_SM_CLOCK{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "legendFormat": "{{pod}} gpu{{gpu}}",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "hertz", "displayName": "SM Clock" }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Memory Copy Utilisation (%)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 24 },
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "DCGM_FI_DEV_MEM_COPY_UTIL{namespace=\"$namespace\", pod=~\"$pod\"}",
+          "legendFormat": "{{pod}} gpu{{gpu}}",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "percent", "min": 0, "max": 100 }
+      }
+    }
+  ]
+}

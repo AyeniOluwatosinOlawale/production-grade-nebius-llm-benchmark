@@ -1,0 +1,111 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm-qwen3
+  namespace: llm-inference
+  labels:
+    app: vllm-qwen3
+spec:
+  replicas: 2  # minReplicas=2 — KEDA will scale up from here
+  selector:
+    matchLabels:
+      app: vllm-qwen3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: vllm-qwen3
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      # Tolerate preemptible H100 nodes
+      tolerations:
+        - key: cloud.nebius.ai/preemptible
+          operator: Exists
+          effect: NoSchedule
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+
+      # Prefer GPU nodes
+      nodeSelector:
+        nvidia.com/gpu.present: "true"
+
+      # Graceful shutdown — allow in-flight requests to complete
+      terminationGracePeriodSeconds: 120
+
+      containers:
+        - name: vllm
+          image: vllm/vllm-openai:v0.33.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+              name: http
+          env:
+            - name: HF_HOME
+              value: /models
+            - name: HUGGING_FACE_HUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+                  optional: true
+            - name: VLLM_WORKER_MULTIPROC_METHOD
+              value: spawn
+          args:
+            - --model=Qwen/Qwen3-27B
+            - --tensor-parallel-size=2
+            - --dtype=bfloat16
+            - --max-model-len=32768
+            - --gpu-memory-utilization=0.90
+            - --served-model-name=qwen3-27b
+            - --port=8000
+            - --host=0.0.0.0
+            - --enable-chunked-prefill
+            - --max-num-seqs=256
+          resources:
+            requests:
+              nvidia.com/gpu: "2"
+              memory: "160Gi"
+              cpu: "8"
+            limits:
+              nvidia.com/gpu: "2"
+              memory: "200Gi"
+              cpu: "32"
+          volumeMounts:
+            - name: model-cache
+              mountPath: /models
+            - name: shm
+              mountPath: /dev/shm
+          # vLLM takes 3–8 min to load Qwen3-27B from cached PVC
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 300
+            periodSeconds: 30
+            failureThreshold: 20
+            successThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 600
+            periodSeconds: 30
+            failureThreshold: 5
+
+      volumes:
+        - name: model-cache
+          persistentVolumeClaim:
+            claimName: vllm-model-cache
+        # Shared memory required for tensor parallelism
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 32Gi

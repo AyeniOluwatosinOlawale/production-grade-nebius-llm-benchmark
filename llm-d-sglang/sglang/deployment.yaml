@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sglang-qwen3
+  namespace: llm-inference
+  labels:
+    app: sglang-qwen3
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sglang-qwen3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: sglang-qwen3
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "30000"
+        prometheus.io/path: "/metrics"
+    spec:
+      tolerations:
+        - key: cloud.nebius.ai/preemptible
+          operator: Exists
+          effect: NoSchedule
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+      nodeSelector:
+        nvidia.com/gpu.present: "true"
+      terminationGracePeriodSeconds: 120
+      containers:
+        - name: sglang
+          image: lmsysorg/sglang:v0.5.23-cu130
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 30000
+              name: http
+          env:
+            - name: HF_HOME
+              value: /models
+            - name: HUGGING_FACE_HUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+                  optional: true
+          command: ["python3", "-m", "sglang.launch_server"]
+          args:
+            - --model-path=Qwen/Qwen3-27B
+            - --tp=2
+            - --dtype=bfloat16
+            - --max-prefill-tokens=32768
+            - --served-model-name=qwen3-27b
+            - --port=30000
+            - --host=0.0.0.0
+            - --enable-metrics
+            - --max-running-requests=256
+            - --chunked-prefill-size=8192
+          resources:
+            requests:
+              nvidia.com/gpu: "2"
+              memory: "160Gi"
+              cpu: "8"
+            limits:
+              nvidia.com/gpu: "2"
+              memory: "200Gi"
+              cpu: "32"
+          volumeMounts:
+            - name: model-cache
+              mountPath: /models
+            - name: shm
+              mountPath: /dev/shm
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 30000
+            initialDelaySeconds: 300
+            periodSeconds: 30
+            failureThreshold: 20
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 30000
+            initialDelaySeconds: 600
+            periodSeconds: 30
+            failureThreshold: 5
+      volumes:
+        - name: model-cache
+          persistentVolumeClaim:
+            claimName: sglang-model-cache
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 32Gi

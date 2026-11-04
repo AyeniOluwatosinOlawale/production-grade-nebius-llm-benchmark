@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sglang-qwen3
+  namespace: llm-inference
+  labels:
+    app: sglang-qwen3
+spec:
+  type: ClusterIP
+  selector:
+    app: sglang-qwen3
+  ports:
+    - port: 30000
+      targetPort: 30000
+      protocol: TCP
+      name: http

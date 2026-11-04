@@ -1,0 +1,42 @@
+# DCGM Exporter Helm values
+# helm install dcgm-exporter gpu-helm-charts/dcgm-exporter \
+#   -n monitoring -f monitoring/dcgm-exporter/values.yaml
+
+# Deploy on GPU nodes only
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: nvidia.com/gpu.present
+              operator: In
+              values:
+                - "true"
+
+tolerations:
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule
+  - key: cloud.nebius.ai/preemptible
+    operator: Exists
+    effect: NoSchedule
+
+# Expose as a service for Prometheus scraping
+service:
+  enable: true
+  type: ClusterIP
+  port: 9400
+
+# Metric collection interval
+arguments:
+  - -c
+  - "5000"  # collect every 5 seconds
+
+# ServiceMonitor for Prometheus Operator auto-discovery
+serviceMonitor:
+  enabled: true
+  namespace: monitoring
+  interval: 15s
+  honorLabels: true
+  additionalLabels:
+    release: kube-prometheus-stack

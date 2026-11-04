@@ -1,0 +1,10 @@
+*.log
+load-test/reports/
+.env
+*.tfstate
+*.tfstate.backup
+.terraform/
+kubeconfig
+*.kubeconfig
+__pycache__/
+.DS_Store

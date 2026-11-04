@@ -1,0 +1,57 @@
+# Prometheus recording rules — normalises vLLM metric names to llm:* namespace
+# so Grafana dashboards are identical across all 6 repos
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: llm-recording-rules
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  groups:
+    - name: llm.rules
+      interval: 15s
+      rules:
+        # --- Throughput ---
+        - record: llm:tokens_per_second
+          expr: sum(rate(vllm:generation_tokens_total{namespace="llm-inference"}[1m]))
+
+        - record: llm:request_throughput
+          expr: sum(rate(vllm:request_success_total{namespace="llm-inference"}[1m]))
+
+        # --- Latency ---
+        - record: llm:ttft_p50
+          expr: histogram_quantile(0.50, sum(rate(vllm:time_to_first_token_seconds_bucket{namespace="llm-inference"}[5m])) by (le))
+
+        - record: llm:ttft_p95
+          expr: histogram_quantile(0.95, sum(rate(vllm:time_to_first_token_seconds_bucket{namespace="llm-inference"}[5m])) by (le))
+
+        - record: llm:ttft_p99
+          expr: histogram_quantile(0.99, sum(rate(vllm:time_to_first_token_seconds_bucket{namespace="llm-inference"}[5m])) by (le))
+
+        - record: llm:tpot_p50
+          expr: histogram_quantile(0.50, sum(rate(vllm:time_per_output_token_seconds_bucket{namespace="llm-inference"}[5m])) by (le))
+
+        - record: llm:tpot_p95
+          expr: histogram_quantile(0.95, sum(rate(vllm:time_per_output_token_seconds_bucket{namespace="llm-inference"}[5m])) by (le))
+
+        - record: llm:e2e_latency_p95
+          expr: histogram_quantile(0.95, sum(rate(vllm:e2e_request_latency_seconds_bucket{namespace="llm-inference"}[5m])) by (le))
+
+        - record: llm:e2e_latency_p99
+          expr: histogram_quantile(0.99, sum(rate(vllm:e2e_request_latency_seconds_bucket{namespace="llm-inference"}[5m])) by (le))
+
+        # --- KV Cache ---
+        - record: llm:kv_cache_util
+          expr: avg(vllm:gpu_cache_usage_perc{namespace="llm-inference"})
+
+        # --- GPU (from DCGM) ---
+        - record: llm:gpu_util
+          expr: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference"})
+
+        - record: llm:gpu_vram_used_gib
+          expr: avg(DCGM_FI_DEV_FB_USED{namespace="llm-inference"}) / 1024
+
+        # --- Queue depth (used by KEDA) ---
+        - record: llm:requests_waiting
+          expr: sum(vllm:num_requests_waiting{namespace="llm-inference"})

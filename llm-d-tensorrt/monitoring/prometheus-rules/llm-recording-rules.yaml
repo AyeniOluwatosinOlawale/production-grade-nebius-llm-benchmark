@@ -1,0 +1,50 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: llm-recording-rules
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  groups:
+    - name: llm.rules
+      interval: 15s
+      rules:
+        - record: llm:tokens_per_second
+          expr: sum(rate(nv_trt_llm_generation_tokens_total{namespace="llm-inference"}[1m]))
+
+        - record: llm:request_throughput
+          expr: sum(rate(nv_inference_exec_count{namespace="llm-inference"}[1m]))
+
+        - record: llm:ttft_p50
+          expr: histogram_quantile(0.50, sum(rate(nv_trt_llm_first_token_latency_ms_bucket{namespace="llm-inference"}[5m])) by (le)) / 1000
+
+        - record: llm:ttft_p95
+          expr: histogram_quantile(0.95, sum(rate(nv_trt_llm_first_token_latency_ms_bucket{namespace="llm-inference"}[5m])) by (le)) / 1000
+
+        - record: llm:ttft_p99
+          expr: histogram_quantile(0.99, sum(rate(nv_trt_llm_first_token_latency_ms_bucket{namespace="llm-inference"}[5m])) by (le)) / 1000
+
+        - record: llm:tpot_p50
+          expr: histogram_quantile(0.50, sum(rate(nv_trt_llm_time_per_output_token_ms_bucket{namespace="llm-inference"}[5m])) by (le)) / 1000
+
+        - record: llm:tpot_p95
+          expr: histogram_quantile(0.95, sum(rate(nv_trt_llm_time_per_output_token_ms_bucket{namespace="llm-inference"}[5m])) by (le)) / 1000
+
+        - record: llm:e2e_latency_p95
+          expr: histogram_quantile(0.95, sum(rate(nv_inference_request_duration_us_bucket{namespace="llm-inference"}[5m])) by (le)) / 1000000
+
+        - record: llm:e2e_latency_p99
+          expr: histogram_quantile(0.99, sum(rate(nv_inference_request_duration_us_bucket{namespace="llm-inference"}[5m])) by (le)) / 1000000
+
+        - record: llm:kv_cache_util
+          expr: avg(nv_trt_llm_kv_cache_utilization_ratio{namespace="llm-inference"})
+
+        - record: llm:gpu_util
+          expr: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference"})
+
+        - record: llm:gpu_vram_used_gib
+          expr: avg(DCGM_FI_DEV_FB_USED{namespace="llm-inference"}) / 1024
+
+        - record: llm:requests_waiting
+          expr: sum(nv_trt_llm_request_queue_size{namespace="llm-inference"})

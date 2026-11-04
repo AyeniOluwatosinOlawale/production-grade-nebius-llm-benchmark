@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tensorrt-model-cache
+  namespace: llm-inference
+  labels:
+    app: tensorrt
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: nebius-network-ssd
+  resources:
+    requests:
+      storage: 100Gi

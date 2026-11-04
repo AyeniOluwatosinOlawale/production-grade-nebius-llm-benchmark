@@ -1,0 +1,43 @@
+# Secrets
+*.env
+.env.*
+secrets/
+*-secret.yaml
+*-credentials.yaml
+
+# Terraform / Tofu state
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Helm chart cache
+charts/
+*.tgz
+
+# Load test results
+load-test/results/
+load-test/*.json.out
+k6-summary*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Logs
+*.log
+logs/

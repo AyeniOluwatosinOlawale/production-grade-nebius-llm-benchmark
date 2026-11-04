@@ -1,0 +1,39 @@
+# KEDA ScaledObject — scales vLLM deployment on request queue depth
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm-qwen3-scaledobject
+  namespace: llm-inference
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: vllm-qwen3
+
+  # Always keep 2 replicas ready — do NOT let KEDA scale to 0
+  # (H100 preemptible cold-start is 5–15 min; test must not wait on node provisioning)
+  minReplicaCount: 2
+  maxReplicaCount: 8
+
+  # 5 min cooldown — accounts for preemptible H100 node spin-up
+  cooldownPeriod: 300
+  pollingInterval: 15
+
+  triggers:
+    # Primary: scale on vLLM request queue depth
+    - type: prometheus
+      metadata:
+        serverAddress: http://prometheus-operated.monitoring:9090
+        metricName: vllm_requests_waiting
+        query: sum(vllm:num_requests_waiting{namespace="llm-inference"})
+        threshold: "5"
+        activationThreshold: "1"
+
+    # Secondary: scale on average GPU utilisation > 70%
+    - type: prometheus
+      metadata:
+        serverAddress: http://prometheus-operated.monitoring:9090
+        metricName: gpu_utilisation
+        query: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference"})
+        threshold: "70"
+        activationThreshold: "50"
