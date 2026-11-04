@@ -22,7 +22,7 @@ export const options = {
     { duration: '5m',  target: 20  },
     { duration: '8m',  target: 150 },
     { duration: '10m', target: 150 },
-    { duration: '7m',  target: 500 },
+    { duration: '7m',  target: 250 },  // stress peak — capped at 250 to stay under LiteLLM limit
     { duration: '5m',  target: 0   },
   ],
   thresholds: {

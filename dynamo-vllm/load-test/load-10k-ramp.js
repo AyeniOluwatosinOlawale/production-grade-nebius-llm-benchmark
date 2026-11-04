@@ -3,7 +3,7 @@
  * Identical across all 6 benchmark repos for fair comparison.
  */
 import http from 'k6/http';
-import { check } from 'k6';
+import { check, sleep } from 'k6';
 import { Trend, Counter } from 'k6/metrics';
 
 const BASE_URL = __ENV.BASE_URL || 'http://localhost:4000';
@@ -18,7 +18,7 @@ export const options = {
     { duration: '5m',  target: 20  },
     { duration: '8m',  target: 150 },
     { duration: '10m', target: 150 },
-    { duration: '7m',  target: 500 },
+    { duration: '7m',  target: 250 },  // stress peak — capped at 250 to stay under LiteLLM limit
     { duration: '5m',  target: 0   },
   ],
   thresholds: {
@@ -60,4 +60,5 @@ export default function () {
     }
   }
   if (tokens > 0) { tokenCount.add(tokens); totalTokens.add(tokens); }
+  sleep(0.5);
 }

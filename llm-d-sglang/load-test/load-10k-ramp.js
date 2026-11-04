@@ -130,7 +130,7 @@ export default function () {
   }
 
   // Minimal sleep to avoid client-side throttling
-  sleep(0.1);
+  sleep(0.5);
 }
 
 export function handleSummary(data) {

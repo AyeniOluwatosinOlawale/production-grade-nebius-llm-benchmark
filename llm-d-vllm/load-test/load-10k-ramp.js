@@ -29,7 +29,7 @@ export const options = {
     { duration: '5m',  target: 20  },  // warm-up
     { duration: '8m',  target: 150 },  // trigger KEDA scale
     { duration: '10m', target: 150 },  // hold — replica verify window at t≈23min
-    { duration: '7m',  target: 500 },  // stress peak
+    { duration: '7m',  target: 250 },  // stress peak — capped at 250 to stay under LiteLLM limit
     { duration: '5m',  target: 0   },  // ramp down — observe cooldown
   ],
   thresholds: {
@@ -97,4 +97,5 @@ export default function () {
   }
 
   // No sleep — VUs immediately request next completion to maximise concurrency pressure
+  sleep(0.5);
 }

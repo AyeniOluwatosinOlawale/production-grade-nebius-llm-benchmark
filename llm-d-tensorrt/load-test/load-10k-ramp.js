@@ -21,8 +21,8 @@ export const options = {
         { duration: "5m", target: 20 },   // Phase 2: steady low
         { duration: "5m", target: 150 },  // Phase 3: ramp to medium — KEDA should scale
         { duration: "10m", target: 150 }, // Phase 4: sustained medium
-        { duration: "5m", target: 500 },  // Phase 5: peak — force max replicas
-        { duration: "5m", target: 500 },  // Phase 6: sustained peak
+        { duration: "5m", target: 250 },  // Phase 5: peak — capped at 250 to stay under LiteLLM limit
+        { duration: "5m", target: 250 },  // Phase 6: sustained peak
         { duration: "2m", target: 0 },    // Phase 7: cool-down
       ],
     },
