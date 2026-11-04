@@ -11,5 +11,23 @@ data:
           model: openai/qwen3-27b
           api_base: http://dynamo-router.llm-inference:8080
           api_key: "none"
+          timeout: 120
+          stream_timeout: 120
+          max_tokens: 2048
+
     general_settings:
-      master_key: sk-nexora-bench
+      master_key: "os.environ/LITELLM_MASTER_KEY"
+      num_workers: 4
+      request_timeout: 120
+      drop_params: true
+
+    litellm_settings:
+      success_callback: ["prometheus"]
+      failure_callback: ["prometheus"]
+      cache: false
+      num_retries: 2
+      retry_after: 5
+
+    prometheus:
+      success_job_metrics: true
+      failure_job_metrics: true

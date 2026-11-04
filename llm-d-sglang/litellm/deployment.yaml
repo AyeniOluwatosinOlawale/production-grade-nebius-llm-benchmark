@@ -40,6 +40,11 @@ spec:
           env:
             - name: LITELLM_LOG
               value: "INFO"
+            - name: LITELLM_MASTER_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: litellm-secret
+                  key: master-key
             - name: STORE_MODEL_IN_DB
               value: "false"
           resources:

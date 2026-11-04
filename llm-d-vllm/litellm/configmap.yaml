@@ -9,19 +9,25 @@ data:
       - model_name: qwen3-27b
         litellm_params:
           model: openai/qwen3-27b
-          # llm-d gateway service — routes to InferencePool
           api_base: http://llmd-gateway.llm-inference:80
           api_key: "none"
           timeout: 120
           stream_timeout: 120
+          max_tokens: 2048
 
     general_settings:
-      master_key: "sk-nebius-bench-1234"
+      master_key: "os.environ/LITELLM_MASTER_KEY"
       num_workers: 4
       request_timeout: 120
       drop_params: true
 
     litellm_settings:
-      success_callback: []
-      failure_callback: []
+      success_callback: ["prometheus"]
+      failure_callback: ["prometheus"]
       cache: false
+      num_retries: 2
+      retry_after: 5
+
+    prometheus:
+      success_job_metrics: true
+      failure_job_metrics: true

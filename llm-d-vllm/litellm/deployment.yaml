@@ -63,6 +63,11 @@ spec:
           env:
             - name: LITELLM_LOG
               value: "INFO"
+            - name: LITELLM_MASTER_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: litellm-secret
+                  key: master-key
       volumes:
         - name: config
           configMap:

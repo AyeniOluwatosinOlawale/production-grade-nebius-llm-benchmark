@@ -22,6 +22,14 @@ spec:
             - containerPort: 4000
               name: http
           args: ["--config=/etc/litellm/config.yaml", "--port=4000", "--num_workers=4"]
+          env:
+            - name: LITELLM_LOG
+              value: "INFO"
+            - name: LITELLM_MASTER_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: litellm-secret
+                  key: master-key
           volumeMounts:
             - name: config
               mountPath: /etc/litellm
