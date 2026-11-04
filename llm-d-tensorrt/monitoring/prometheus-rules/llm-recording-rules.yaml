@@ -41,10 +41,10 @@ spec:
           expr: avg(nv_trt_llm_kv_cache_utilization_ratio{namespace="llm-inference"})
 
         - record: llm:gpu_util
-          expr: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference"})
+          expr: avg(DCGM_FI_DEV_GPU_UTIL)
 
         - record: llm:gpu_vram_used_gib
-          expr: avg(DCGM_FI_DEV_FB_USED{namespace="llm-inference"}) / 1024
+          expr: avg(DCGM_FI_DEV_FB_USED) / 1024
 
         - record: llm:requests_waiting
           expr: sum(nv_trt_llm_request_queue_size{namespace="llm-inference"})

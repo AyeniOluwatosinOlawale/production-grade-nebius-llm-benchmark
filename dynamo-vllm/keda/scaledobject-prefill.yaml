@@ -15,8 +15,8 @@ spec:
   triggers:
     - type: prometheus
       metadata:
-        serverAddress: http://prometheus-operated.monitoring:9090
+        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: gpu_util_prefill
-        query: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference", pod=~"vllm-prefill-.*"})
+        query: avg(DCGM_FI_DEV_GPU_UTIL)
         threshold: "70"
         activationThreshold: "50"

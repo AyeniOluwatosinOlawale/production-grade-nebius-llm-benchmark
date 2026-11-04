@@ -15,15 +15,15 @@ spec:
   triggers:
     - type: prometheus
       metadata:
-        serverAddress: http://prometheus-operated.monitoring:9090
+        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: sglang_requests_waiting
         query: sum(sglang:num_requests_waiting{namespace="llm-inference"})
         threshold: "5"
         activationThreshold: "1"
     - type: prometheus
       metadata:
-        serverAddress: http://prometheus-operated.monitoring:9090
+        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: gpu_utilisation
-        query: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference"})
+        query: avg(DCGM_FI_DEV_GPU_UTIL)
         threshold: "70"
         activationThreshold: "50"

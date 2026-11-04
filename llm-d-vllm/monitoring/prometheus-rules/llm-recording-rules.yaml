@@ -47,10 +47,10 @@ spec:
 
         # --- GPU (from DCGM) ---
         - record: llm:gpu_util
-          expr: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference"})
+          expr: avg(DCGM_FI_DEV_GPU_UTIL)
 
         - record: llm:gpu_vram_used_gib
-          expr: avg(DCGM_FI_DEV_FB_USED{namespace="llm-inference"}) / 1024
+          expr: avg(DCGM_FI_DEV_FB_USED) / 1024
 
         # --- Queue depth (used by KEDA) ---
         - record: llm:requests_waiting

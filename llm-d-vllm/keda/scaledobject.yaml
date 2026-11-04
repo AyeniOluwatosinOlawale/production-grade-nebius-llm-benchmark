@@ -23,7 +23,7 @@ spec:
     # Primary: scale on vLLM request queue depth
     - type: prometheus
       metadata:
-        serverAddress: http://prometheus-operated.monitoring:9090
+        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: vllm_requests_waiting
         query: sum(vllm:num_requests_waiting{namespace="llm-inference"})
         threshold: "5"
@@ -32,8 +32,8 @@ spec:
     # Secondary: scale on average GPU utilisation > 70%
     - type: prometheus
       metadata:
-        serverAddress: http://prometheus-operated.monitoring:9090
+        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: gpu_utilisation
-        query: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference"})
+        query: avg(DCGM_FI_DEV_GPU_UTIL)
         threshold: "70"
         activationThreshold: "50"

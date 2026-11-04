@@ -31,8 +31,8 @@ spec:
         - record: llm:kv_cache_util
           expr: avg(sglang:token_usage{namespace="llm-inference"})
         - record: llm:gpu_util
-          expr: avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference"})
+          expr: avg(DCGM_FI_DEV_GPU_UTIL)
         - record: llm:gpu_vram_used_gib
-          expr: avg(DCGM_FI_DEV_FB_USED{namespace="llm-inference"}) / 1024
+          expr: avg(DCGM_FI_DEV_FB_USED) / 1024
         - record: llm:requests_waiting
           expr: sum(sglang:num_requests_waiting{namespace="llm-inference"})

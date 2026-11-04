@@ -16,5 +16,5 @@ spec:
         serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: DCGM_FI_DEV_GPU_UTIL_prefill_avg
         query: |
-          avg(DCGM_FI_DEV_GPU_UTIL{namespace="llm-inference",pod=~"dynamo-tensorrt-prefill-.*"})
+          avg(DCGM_FI_DEV_GPU_UTIL)
         threshold: "70"

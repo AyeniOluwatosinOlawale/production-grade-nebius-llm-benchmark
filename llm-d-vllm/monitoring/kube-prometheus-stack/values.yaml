@@ -1,18 +1,22 @@
-# kube-prometheus-stack Helm values
-# helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
-#   -n monitoring -f monitoring/kube-prometheus-stack/values.yaml
-
 nameOverride: kube-prometheus-stack
 
-# Tolerations applied to every component so they can run on GPU/preemptible nodes
-# (required when no dedicated CPU node group is available)
-commonTolerations: &commonTolerations
-  - key: nvidia.com/gpu
-    operator: Exists
-    effect: NoSchedule
-  - key: cloud.nebius.ai/preemptible
-    operator: Exists
-    effect: NoSchedule
+prometheusOperator:
+  tolerations:
+    - key: nvidia.com/gpu
+      operator: Exists
+      effect: NoSchedule
+    - key: cloud.nebius.ai/preemptible
+      operator: Exists
+      effect: NoSchedule
+  admissionWebhooks:
+    patch:
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+        - key: cloud.nebius.ai/preemptible
+          operator: Exists
+          effect: NoSchedule
 
 prometheus:
   prometheusSpec:
@@ -26,7 +30,13 @@ prometheus:
           resources:
             requests:
               storage: 100Gi
-    tolerations: *commonTolerations
+    tolerations:
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
+      - key: cloud.nebius.ai/preemptible
+        operator: Exists
+        effect: NoSchedule
     serviceMonitorSelectorNilUsesHelmValues: false
     serviceMonitorSelector: {}
     serviceMonitorNamespaceSelector: {}
@@ -47,7 +57,13 @@ prometheus:
 grafana:
   enabled: true
   adminPassword: "nebius-llm-bench"
-  tolerations: *commonTolerations
+  tolerations:
+    - key: nvidia.com/gpu
+      operator: Exists
+      effect: NoSchedule
+    - key: cloud.nebius.ai/preemptible
+      operator: Exists
+      effect: NoSchedule
   persistence:
     enabled: true
     storageClassName: nebius-network-ssd
@@ -70,7 +86,13 @@ grafana:
 alertmanager:
   enabled: true
   alertmanagerSpec:
-    tolerations: *commonTolerations
+    tolerations:
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
+      - key: cloud.nebius.ai/preemptible
+        operator: Exists
+        effect: NoSchedule
     storage:
       volumeClaimTemplate:
         spec:
@@ -82,14 +104,20 @@ alertmanager:
 
 kube-state-metrics:
   enabled: true
-  tolerations: *commonTolerations
+  tolerations:
+    - key: nvidia.com/gpu
+      operator: Exists
+      effect: NoSchedule
+    - key: cloud.nebius.ai/preemptible
+      operator: Exists
+      effect: NoSchedule
 
 nodeExporter:
   enabled: true
-  tolerations: *commonTolerations
-
-prometheusOperator:
-  tolerations: *commonTolerations
-  admissionWebhooks:
-    patch:
-      tolerations: *commonTolerations
+  tolerations:
+    - key: nvidia.com/gpu
+      operator: Exists
+      effect: NoSchedule
+    - key: cloud.nebius.ai/preemptible
+      operator: Exists
+      effect: NoSchedule
