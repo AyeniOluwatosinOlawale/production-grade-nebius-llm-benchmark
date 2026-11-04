@@ -98,9 +98,27 @@ print(round(max(vals), 4) if vals else 'N/A')
 "
 }
 
-echo "stack,ttft_p95_avg_s,ttft_p99_avg_s,tpot_p95_avg_s,tokens_per_sec_avg,kv_cache_avg_pct,gpu_util_avg_pct,throughput_avg_rps,e2e_p95_avg_s,e2e_p99_avg_s,gpu_util_peak_pct,throughput_peak_rps" > "$OUT_CSV"
+# Extract k6 client-side E2E p95 per workload from k6 summary JSON (if available)
+K6_SUMMARY="$(dirname "$0")/../load-test/reports/$(ls "$(dirname "$0")/../load-test/reports/" 2>/dev/null | tail -1)/summary.json"
+k6_p95() {
+  local metric="$1"
+  if [ -f "$K6_SUMMARY" ]; then
+    python3 -c "
+import sys, json
+try:
+    d = json.load(open('$K6_SUMMARY'))
+    val = d.get('metrics', {}).get('${metric}', {}).get('values', {}).get('p(95)', None)
+    print(round(val / 1000, 3) if val is not None else 'N/A')
+except: print('N/A')
+"
+  else
+    echo "N/A"
+  fi
+}
 
-echo "${STACK_NAME},$(avg_of "$TTFT_P95"),$(avg_of "$TTFT_P99"),$(avg_of "$TPOT"),$(avg_of "$TOKENS_PER_SEC"),$(avg_of "$KV_CACHE"),$(avg_of "$GPU_UTIL"),$(avg_of "$THROUGHPUT"),$(avg_of "$E2E_P95"),$(avg_of "$E2E_P99"),$(peak_of "$GPU_UTIL"),$(peak_of "$THROUGHPUT")" >> "$OUT_CSV"
+echo "stack,ttft_p95_avg_s,ttft_p99_avg_s,tpot_p95_avg_s,tokens_per_sec_avg,kv_cache_avg_pct,gpu_util_avg_pct,throughput_avg_rps,server_e2e_p95_avg_s,server_e2e_p99_avg_s,gpu_util_peak_pct,throughput_peak_rps,k6_e2e_short_p95_s,k6_e2e_medium_p95_s,k6_e2e_long_p95_s,k6_e2e_context_p95_s" > "$OUT_CSV"
+
+echo "${STACK_NAME},$(avg_of "$TTFT_P95"),$(avg_of "$TTFT_P99"),$(avg_of "$TPOT"),$(avg_of "$TOKENS_PER_SEC"),$(avg_of "$KV_CACHE"),$(avg_of "$GPU_UTIL"),$(avg_of "$THROUGHPUT"),$(avg_of "$E2E_P95"),$(avg_of "$E2E_P99"),$(peak_of "$GPU_UTIL"),$(peak_of "$THROUGHPUT"),$(k6_p95 e2e_short_ms),$(k6_p95 e2e_medium_ms),$(k6_p95 e2e_long_ms),$(k6_p95 e2e_context_ms)" >> "$OUT_CSV"
 
 echo ""
 echo "==> Export complete."

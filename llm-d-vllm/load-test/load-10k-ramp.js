@@ -34,6 +34,11 @@ const tpot   = { short: new Trend('tpot_short_ms',   true),
                  long:   new Trend('tpot_long_ms',    true),
                  context:new Trend('tpot_context_ms', true) };
 
+const e2e    = { short: new Trend('e2e_short_ms',    true),
+                 medium: new Trend('e2e_medium_ms',   true),
+                 long:   new Trend('e2e_long_ms',     true),
+                 context:new Trend('e2e_context_ms',  true) };
+
 const totalTokens = new Counter('total_tokens_generated');
 
 // ── Prompts calibrated to target token lengths ────────────────────────────────
@@ -229,23 +234,23 @@ export const options = {
   },
 
   thresholds: {
-    // Short workload: strictest latency budget
-    'ttft_short_ms':          ['p(95)<3000'],
-    // Medium workload
-    'ttft_medium_ms':         ['p(95)<8000'],
-    // Long workload
-    'ttft_long_ms':           ['p(95)<20000'],
-    // Context stress: very relaxed — 8k token prefill takes time
-    'ttft_context_ms':        ['p(95)<45000'],
+    // TTFT per workload type
+    'ttft_short_ms':          ['p(95)<3000'],    // 3s  — 50 token prefill
+    'ttft_medium_ms':         ['p(95)<8000'],    // 8s  — 500 token prefill
+    'ttft_long_ms':           ['p(95)<20000'],   // 20s — 2000 token prefill
+    'ttft_context_ms':        ['p(95)<45000'],   // 45s — 8000 token prefill
+    // E2E latency per workload type (request sent → last token received)
+    'e2e_short_ms':           ['p(95)<10000'],   // 10s  — 50 output tokens
+    'e2e_medium_ms':          ['p(95)<60000'],   // 60s  — 500 output tokens
+    'e2e_long_ms':            ['p(95)<120000'],  // 120s — 1000 output tokens
+    'e2e_context_ms':         ['p(95)<240000'],  // 240s — 2000 output tokens
     // Global error rate
     'http_req_failed':        ['rate<0.05'],
-    // Global E2E latency (driven by context workload at peak)
-    'http_req_duration':      ['p(95)<120000'],
   },
 };
 
 // ── SSE stream parser ─────────────────────────────────────────────────────────
-function parseStream(res, ttftTrend, tpotTrend, startMs) {
+function parseStream(res, ttftTrend, tpotTrend, e2eTrend, startMs) {
   let firstTokenMs = null;
   let lastTokenMs  = null;
   let tokens = 0;
@@ -271,6 +276,9 @@ function parseStream(res, ttftTrend, tpotTrend, startMs) {
       }
     } catch { /* non-JSON SSE line */ }
   }
+  if (lastTokenMs !== null) {
+    e2eTrend.add(lastTokenMs - startMs);
+  }
   return tokens;
 }
 
@@ -295,7 +303,7 @@ function sendRequest(workloadKey, sleepSecs) {
 
   check(res, { [`${workloadKey} status 200`]: (r) => r.status === 200 });
 
-  const n = parseStream(res, ttft[workloadKey], tpot[workloadKey], startMs);
+  const n = parseStream(res, ttft[workloadKey], tpot[workloadKey], e2e[workloadKey], startMs);
   if (n > 0) totalTokens.add(n);
 
   sleep(sleepSecs);
