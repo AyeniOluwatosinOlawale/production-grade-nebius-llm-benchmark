@@ -19,7 +19,13 @@ helm upgrade --install llm-d-inference-scheduler llm-d/llm-d-inference-scheduler
   --create-namespace \
   --wait \
   --timeout 5m \
-  --set replicaCount=2
+  --set replicaCount=1 \
+  --set tolerations[0].key=nvidia.com/gpu \
+  --set tolerations[0].operator=Exists \
+  --set tolerations[0].effect=NoSchedule \
+  --set tolerations[1].key=cloud.nebius.ai/preemptible \
+  --set tolerations[1].operator=Exists \
+  --set tolerations[1].effect=NoSchedule
 
 echo "==> Waiting for llm-d InferencePool CRD..."
 kubectl wait --for=condition=Established crd/inferencepools.inference.networking.x-k8s.io --timeout=120s || \

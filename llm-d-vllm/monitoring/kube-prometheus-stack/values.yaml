@@ -4,6 +4,16 @@
 
 nameOverride: kube-prometheus-stack
 
+# Tolerations applied to every component so they can run on GPU/preemptible nodes
+# (required when no dedicated CPU node group is available)
+commonTolerations: &commonTolerations
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule
+  - key: cloud.nebius.ai/preemptible
+    operator: Exists
+    effect: NoSchedule
+
 prometheus:
   prometheusSpec:
     retention: 30d
@@ -16,15 +26,13 @@ prometheus:
           resources:
             requests:
               storage: 100Gi
-    # Scrape all ServiceMonitors across namespaces
+    tolerations: *commonTolerations
     serviceMonitorSelectorNilUsesHelmValues: false
     serviceMonitorSelector: {}
     serviceMonitorNamespaceSelector: {}
-    # Scrape all PodMonitors
     podMonitorSelectorNilUsesHelmValues: false
     podMonitorSelector: {}
     podMonitorNamespaceSelector: {}
-    # Load recording rules from all namespaces
     ruleSelectorNilUsesHelmValues: false
     ruleSelector: {}
     ruleNamespaceSelector: {}
@@ -39,6 +47,7 @@ prometheus:
 grafana:
   enabled: true
   adminPassword: "nebius-llm-bench"
+  tolerations: *commonTolerations
   persistence:
     enabled: true
     storageClassName: nebius-network-ssd
@@ -46,7 +55,6 @@ grafana:
   service:
     type: LoadBalancer
     port: 3000
-  # Auto-load dashboards from ConfigMaps with this label
   sidecar:
     dashboards:
       enabled: true
@@ -62,6 +70,7 @@ grafana:
 alertmanager:
   enabled: true
   alertmanagerSpec:
+    tolerations: *commonTolerations
     storage:
       volumeClaimTemplate:
         spec:
@@ -71,10 +80,16 @@ alertmanager:
             requests:
               storage: 10Gi
 
-# Scrape kube-state-metrics for replica count panels
 kube-state-metrics:
   enabled: true
+  tolerations: *commonTolerations
 
-# Node exporter for host metrics
 nodeExporter:
   enabled: true
+  tolerations: *commonTolerations
+
+prometheusOperator:
+  tolerations: *commonTolerations
+  admissionWebhooks:
+    patch:
+      tolerations: *commonTolerations

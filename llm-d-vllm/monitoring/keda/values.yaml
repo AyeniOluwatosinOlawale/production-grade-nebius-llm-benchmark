@@ -1,7 +1,15 @@
 # KEDA Helm values
 # helm install keda kedacore/keda -n keda -f monitoring/keda/values.yaml
 
-replicaCount: 2
+replicaCount: 1
+
+tolerations:
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule
+  - key: cloud.nebius.ai/preemptible
+    operator: Exists
+    effect: NoSchedule
 
 image:
   keda:

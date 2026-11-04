@@ -19,6 +19,13 @@ spec:
         prometheus.io/port: "4000"
         prometheus.io/path: "/metrics"
     spec:
+      tolerations:
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule
+        - key: cloud.nebius.ai/preemptible
+          operator: Exists
+          effect: NoSchedule
       containers:
         - name: litellm
           image: ghcr.io/berriai/litellm:main-v1.60.0
