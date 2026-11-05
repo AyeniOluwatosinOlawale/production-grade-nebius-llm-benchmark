@@ -14211,3 +14211,1266 @@ short_workload    [  95% ] 188/500 VUs  33m21.9s/35m00.0s
 long_workload     [  95% ] 08/20 VUs    28m21.9s/30m00.0s
 medium_workload   [  95% ] 22/60 VUs    28m21.9s/30m00.0s
 context_stress    [  86% ] 04/10 VUs    10m21.9s/12m00.0s
+
+running (34m53.6s), 222/590 VUs, 87123 complete and 1 interrupted iterations
+short_workload    [  95% ] 188/500 VUs  33m22.9s/35m00.0s
+long_workload     [  95% ] 08/20 VUs    28m22.9s/30m00.0s
+medium_workload   [  95% ] 22/60 VUs    28m22.9s/30m00.0s
+context_stress    [  87% ] 04/10 VUs    10m22.9s/12m00.0s
+
+running (34m54.6s), 221/590 VUs, 87153 complete and 1 interrupted iterations
+short_workload    [  95% ] 187/500 VUs  33m23.9s/35m00.0s
+long_workload     [  95% ] 08/20 VUs    28m23.9s/30m00.0s
+medium_workload   [  95% ] 22/60 VUs    28m23.9s/30m00.0s
+context_stress    [  87% ] 04/10 VUs    10m23.9s/12m00.0s
+
+running (34m55.6s), 221/590 VUs, 87178 complete and 1 interrupted iterations
+short_workload    [  95% ] 187/500 VUs  33m24.9s/35m00.0s
+long_workload     [  95% ] 08/20 VUs    28m24.9s/30m00.0s
+medium_workload   [  95% ] 22/60 VUs    28m24.9s/30m00.0s
+context_stress    [  87% ] 04/10 VUs    10m24.9s/12m00.0s
+
+running (34m56.6s), 221/590 VUs, 87187 complete and 1 interrupted iterations
+short_workload    [  96% ] 187/500 VUs  33m25.9s/35m00.0s
+long_workload     [  95% ] 08/20 VUs    28m25.9s/30m00.0s
+medium_workload   [  95% ] 22/60 VUs    28m25.9s/30m00.0s
+context_stress    [  87% ] 04/10 VUs    10m25.9s/12m00.0s
+time="2026-11-05T19:11:01Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (34m57.6s), 221/590 VUs, 87218 complete and 1 interrupted iterations
+short_workload    [  96% ] 187/500 VUs  33m26.9s/35m00.0s
+long_workload     [  95% ] 08/20 VUs    28m26.9s/30m00.0s
+medium_workload   [  95% ] 22/60 VUs    28m26.9s/30m00.0s
+context_stress    [  87% ] 04/10 VUs    10m26.9s/12m00.0s
+time="2026-11-05T19:11:01Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:01Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:02Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (34m58.6s), 221/590 VUs, 87247 complete and 1 interrupted iterations
+short_workload    [  96% ] 187/500 VUs  33m27.9s/35m00.0s
+long_workload     [  95% ] 08/20 VUs    28m27.9s/30m00.0s
+medium_workload   [  95% ] 22/60 VUs    28m27.9s/30m00.0s
+context_stress    [  87% ] 04/10 VUs    10m27.9s/12m00.0s
+time="2026-11-05T19:11:02Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:03Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (34m59.6s), 220/590 VUs, 87274 complete and 1 interrupted iterations
+short_workload    [  96% ] 186/500 VUs  33m28.9s/35m00.0s
+long_workload     [  95% ] 08/20 VUs    28m28.9s/30m00.0s
+medium_workload   [  95% ] 22/60 VUs    28m28.9s/30m00.0s
+context_stress    [  87% ] 04/10 VUs    10m28.9s/12m00.0s
+time="2026-11-05T19:11:03Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:04Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:04Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m00.6s), 216/590 VUs, 87296 complete and 1 interrupted iterations
+short_workload    [  96% ] 183/500 VUs  33m29.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m29.9s/30m00.0s
+medium_workload   [  95% ] 22/60 VUs    28m29.9s/30m00.0s
+context_stress    [  87% ] 04/10 VUs    10m29.9s/12m00.0s
+time="2026-11-05T19:11:04Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:04Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:04Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:05Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:05Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:05Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:05Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m01.6s), 213/590 VUs, 87337 complete and 1 interrupted iterations
+short_workload    [  96% ] 181/500 VUs  33m30.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m30.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m30.9s/30m00.0s
+context_stress    [  88% ] 04/10 VUs    10m30.9s/12m00.0s
+time="2026-11-05T19:11:05Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m02.6s), 213/590 VUs, 87378 complete and 1 interrupted iterations
+short_workload    [  96% ] 181/500 VUs  33m31.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m31.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m31.9s/30m00.0s
+context_stress    [  88% ] 04/10 VUs    10m31.9s/12m00.0s
+time="2026-11-05T19:11:06Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:06Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m03.6s), 212/590 VUs, 87398 complete and 1 interrupted iterations
+short_workload    [  96% ] 180/500 VUs  33m32.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m32.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m32.9s/30m00.0s
+context_stress    [  88% ] 04/10 VUs    10m32.9s/12m00.0s
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m04.6s), 208/590 VUs, 87441 complete and 1 interrupted iterations
+short_workload    [  96% ] 176/500 VUs  33m33.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m33.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m33.9s/30m00.0s
+context_stress    [  88% ] 04/10 VUs    10m33.9s/12m00.0s
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m05.6s), 198/590 VUs, 87510 complete and 1 interrupted iterations
+short_workload    [  96% ] 166/500 VUs  33m34.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m34.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m34.9s/30m00.0s
+context_stress    [  88% ] 04/10 VUs    10m34.9s/12m00.0s
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m06.6s), 191/590 VUs, 87556 complete and 1 interrupted iterations
+short_workload    [  96% ] 159/500 VUs  33m35.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m35.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m35.9s/30m00.0s
+context_stress    [  88% ] 04/10 VUs    10m35.9s/12m00.0s
+time="2026-11-05T19:11:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m07.6s), 187/590 VUs, 87595 complete and 1 interrupted iterations
+short_workload    [  96% ] 155/500 VUs  33m36.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m36.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m36.9s/30m00.0s
+context_stress    [  88% ] 04/10 VUs    10m36.9s/12m00.0s
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:11Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m08.6s), 181/590 VUs, 87658 complete and 1 interrupted iterations
+short_workload    [  96% ] 149/500 VUs  33m37.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m37.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m37.9s/30m00.0s
+context_stress    [  89% ] 04/10 VUs    10m37.9s/12m00.0s
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m09.6s), 172/590 VUs, 87706 complete and 1 interrupted iterations
+short_workload    [  96% ] 140/500 VUs  33m38.9s/35m00.0s
+long_workload     [  95% ] 07/20 VUs    28m38.9s/30m00.0s
+medium_workload   [  95% ] 21/60 VUs    28m38.9s/30m00.0s
+context_stress    [  89% ] 04/10 VUs    10m38.9s/12m00.0s
+
+running (35m10.6s), 170/590 VUs, 87745 complete and 1 interrupted iterations
+short_workload    [  96% ] 139/500 VUs  33m39.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m39.9s/30m00.0s
+medium_workload   [  96% ] 20/60 VUs    28m39.9s/30m00.0s
+context_stress    [  89% ] 04/10 VUs    10m39.9s/12m00.0s
+time="2026-11-05T19:11:14Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m11.6s), 168/590 VUs, 87799 complete and 1 interrupted iterations
+short_workload    [  96% ] 138/500 VUs  33m40.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m40.9s/30m00.0s
+medium_workload   [  96% ] 19/60 VUs    28m40.9s/30m00.0s
+context_stress    [  89% ] 04/10 VUs    10m40.9s/12m00.0s
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m12.6s), 167/590 VUs, 87827 complete and 1 interrupted iterations
+short_workload    [  96% ] 138/500 VUs  33m41.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m41.9s/30m00.0s
+medium_workload   [  96% ] 18/60 VUs    28m41.9s/30m00.0s
+context_stress    [  89% ] 04/10 VUs    10m41.9s/12m00.0s
+time="2026-11-05T19:11:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:17Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m13.6s), 165/590 VUs, 87873 complete and 1 interrupted iterations
+short_workload    [  96% ] 137/500 VUs  33m42.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m42.9s/30m00.0s
+medium_workload   [  96% ] 17/60 VUs    28m42.9s/30m00.0s
+context_stress    [  89% ] 04/10 VUs    10m42.9s/12m00.0s
+time="2026-11-05T19:11:17Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m14.6s), 163/590 VUs, 87927 complete and 1 interrupted iterations
+short_workload    [  96% ] 136/500 VUs  33m43.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m43.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m43.9s/30m00.0s
+context_stress    [  89% ] 04/10 VUs    10m43.9s/12m00.0s
+time="2026-11-05T19:11:18Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:19Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m15.6s), 162/590 VUs, 87931 complete and 1 interrupted iterations
+short_workload    [  96% ] 135/500 VUs  33m44.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m44.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m44.9s/30m00.0s
+context_stress    [  90% ] 04/10 VUs    10m44.9s/12m00.0s
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+
+running (35m16.6s), 162/590 VUs, 87932 complete and 1 interrupted iterations
+short_workload    [  96% ] 135/500 VUs  33m45.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m45.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m45.9s/30m00.0s
+context_stress    [  90% ] 04/10 VUs    10m45.9s/12m00.0s
+
+running (35m17.6s), 161/590 VUs, 87945 complete and 1 interrupted iterations
+short_workload    [  97% ] 134/500 VUs  33m46.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m46.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m46.9s/30m00.0s
+context_stress    [  90% ] 04/10 VUs    10m46.9s/12m00.0s
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+
+running (35m18.6s), 161/590 VUs, 87945 complete and 1 interrupted iterations
+short_workload    [  97% ] 134/500 VUs  33m47.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m47.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m47.9s/30m00.0s
+context_stress    [  90% ] 04/10 VUs    10m47.9s/12m00.0s
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+time="2026-11-05T19:11:22Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": EOF"
+
+running (35m19.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m48.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m48.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m48.9s/30m00.0s
+context_stress    [  90% ] 04/10 VUs    10m48.9s/12m00.0s
+
+running (35m20.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m49.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m49.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m49.9s/30m00.0s
+context_stress    [  90% ] 04/10 VUs    10m49.9s/12m00.0s
+
+running (35m21.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m50.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m50.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m50.9s/30m00.0s
+context_stress    [  90% ] 04/10 VUs    10m50.9s/12m00.0s
+
+running (35m22.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m51.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m51.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m51.9s/30m00.0s
+context_stress    [  91% ] 04/10 VUs    10m51.9s/12m00.0s
+
+running (35m23.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m52.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m52.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m52.9s/30m00.0s
+context_stress    [  91% ] 04/10 VUs    10m52.9s/12m00.0s
+
+running (35m24.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m53.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m53.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m53.9s/30m00.0s
+context_stress    [  91% ] 04/10 VUs    10m53.9s/12m00.0s
+
+running (35m25.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m54.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m54.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m54.9s/30m00.0s
+context_stress    [  91% ] 04/10 VUs    10m54.9s/12m00.0s
+
+running (35m26.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m55.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m55.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m55.9s/30m00.0s
+context_stress    [  91% ] 04/10 VUs    10m55.9s/12m00.0s
+
+running (35m27.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m56.9s/35m00.0s
+long_workload     [  96% ] 07/20 VUs    28m56.9s/30m00.0s
+medium_workload   [  96% ] 16/60 VUs    28m56.9s/30m00.0s
+context_stress    [  91% ] 04/10 VUs    10m56.9s/12m00.0s
+
+running (35m28.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m57.9s/35m00.0s
+long_workload     [  97% ] 07/20 VUs    28m57.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    28m57.9s/30m00.0s
+context_stress    [  91% ] 04/10 VUs    10m57.9s/12m00.0s
+
+running (35m29.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m58.9s/35m00.0s
+long_workload     [  97% ] 07/20 VUs    28m58.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    28m58.9s/30m00.0s
+context_stress    [  92% ] 04/10 VUs    10m58.9s/12m00.0s
+
+running (35m30.6s), 158/590 VUs, 87970 complete and 1 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  33m59.9s/35m00.0s
+long_workload     [  97% ] 07/20 VUs    28m59.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    28m59.9s/30m00.0s
+context_stress    [  92% ] 04/10 VUs    10m59.9s/12m00.0s
+time="2026-11-05T19:11:35Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:35Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:35Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:35Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m31.6s), 156/590 VUs, 87970 complete and 3 interrupted iterations
+short_workload    [  97% ] 131/500 VUs  34m00.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m00.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    29m00.9s/30m00.0s
+context_stress    [  92% ] 03/10 VUs    11m00.9s/12m00.0s
+time="2026-11-05T19:11:35Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:35Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:35Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:36Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m32.6s), 153/590 VUs, 87977 complete and 3 interrupted iterations
+short_workload    [  97% ] 128/500 VUs  34m01.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m01.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    29m01.9s/30m00.0s
+context_stress    [  92% ] 03/10 VUs    11m01.9s/12m00.0s
+
+running (35m33.6s), 153/590 VUs, 87978 complete and 3 interrupted iterations
+short_workload    [  97% ] 128/500 VUs  34m02.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m02.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    29m02.9s/30m00.0s
+context_stress    [  92% ] 03/10 VUs    11m02.9s/12m00.0s
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m34.6s), 153/590 VUs, 87978 complete and 3 interrupted iterations
+short_workload    [  97% ] 128/500 VUs  34m03.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m03.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    29m03.9s/30m00.0s
+context_stress    [  92% ] 03/10 VUs    11m03.9s/12m00.0s
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:38Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m35.6s), 143/590 VUs, 87995 complete and 3 interrupted iterations
+short_workload    [  97% ] 118/500 VUs  34m04.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m04.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    29m04.9s/30m00.0s
+context_stress    [  92% ] 03/10 VUs    11m04.9s/12m00.0s
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m36.6s), 143/590 VUs, 88010 complete and 3 interrupted iterations
+short_workload    [  97% ] 118/500 VUs  34m05.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m05.9s/30m00.0s
+medium_workload   [  97% ] 16/60 VUs    29m05.9s/30m00.0s
+context_stress    [  92% ] 03/10 VUs    11m05.9s/12m00.0s
+time="2026-11-05T19:11:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:41Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m37.6s), 141/590 VUs, 88015 complete and 3 interrupted iterations
+short_workload    [  97% ] 117/500 VUs  34m06.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m06.9s/30m00.0s
+medium_workload   [  97% ] 15/60 VUs    29m06.9s/30m00.0s
+context_stress    [  93% ] 03/10 VUs    11m06.9s/12m00.0s
+time="2026-11-05T19:11:41Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m38.6s), 139/590 VUs, 88017 complete and 3 interrupted iterations
+short_workload    [  98% ] 115/500 VUs  34m07.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m07.9s/30m00.0s
+medium_workload   [  97% ] 15/60 VUs    29m07.9s/30m00.0s
+context_stress    [  93% ] 03/10 VUs    11m07.9s/12m00.0s
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:42Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m39.6s), 134/590 VUs, 88028 complete and 3 interrupted iterations
+short_workload    [  98% ] 110/500 VUs  34m08.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m08.9s/30m00.0s
+medium_workload   [  97% ] 15/60 VUs    29m08.9s/30m00.0s
+context_stress    [  93% ] 03/10 VUs    11m08.9s/12m00.0s
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m40.6s), 128/590 VUs, 88037 complete and 4 interrupted iterations
+short_workload    [  98% ] 104/500 VUs  34m09.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m09.9s/30m00.0s
+medium_workload   [  97% ] 15/60 VUs    29m09.9s/30m00.0s
+context_stress    [  93% ] 03/10 VUs    11m09.9s/12m00.0s
+time="2026-11-05T19:11:45Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m41.6s), 128/590 VUs, 88038 complete and 4 interrupted iterations
+short_workload    [  98% ] 104/500 VUs  34m10.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m10.9s/30m00.0s
+medium_workload   [  97% ] 15/60 VUs    29m10.9s/30m00.0s
+context_stress    [  93% ] 03/10 VUs    11m10.9s/12m00.0s
+time="2026-11-05T19:11:45Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:45Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:45Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:45Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:45Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:46Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:46Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:46Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:46Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:46Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m42.6s), 126/590 VUs, 88043 complete and 5 interrupted iterations
+short_workload    [  98% ] 102/500 VUs  34m11.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m11.9s/30m00.0s
+medium_workload   [  97% ] 15/60 VUs    29m11.9s/30m00.0s
+context_stress    [  93% ] 03/10 VUs    11m11.9s/12m00.0s
+time="2026-11-05T19:11:46Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:47Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m43.6s), 124/590 VUs, 88049 complete and 5 interrupted iterations
+short_workload    [  98% ] 100/500 VUs  34m12.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m12.9s/30m00.0s
+medium_workload   [  97% ] 15/60 VUs    29m12.9s/30m00.0s
+context_stress    [  93% ] 03/10 VUs    11m12.9s/12m00.0s
+time="2026-11-05T19:11:48Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:48Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m44.6s), 122/590 VUs, 88050 complete and 6 interrupted iterations
+short_workload    [  98% ] 098/500 VUs  34m13.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m13.9s/30m00.0s
+medium_workload   [  97% ] 15/60 VUs    29m13.9s/30m00.0s
+context_stress    [  94% ] 03/10 VUs    11m13.9s/12m00.0s
+
+running (35m45.6s), 121/590 VUs, 88051 complete and 6 interrupted iterations
+short_workload    [  98% ] 098/500 VUs  34m14.9s/35m00.0s
+long_workload     [  97% ] 06/20 VUs    29m14.9s/30m00.0s
+medium_workload   [  97% ] 14/60 VUs    29m14.9s/30m00.0s
+context_stress    [  94% ] 03/10 VUs    11m14.9s/12m00.0s
+time="2026-11-05T19:11:49Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m46.6s), 119/590 VUs, 88051 complete and 8 interrupted iterations
+short_workload    [  98% ] 098/500 VUs  34m15.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m15.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m15.9s/30m00.0s
+context_stress    [  94% ] 03/10 VUs    11m15.9s/12m00.0s
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:50Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m47.6s), 115/590 VUs, 88064 complete and 8 interrupted iterations
+short_workload    [  98% ] 094/500 VUs  34m16.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m16.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m16.9s/30m00.0s
+context_stress    [  94% ] 03/10 VUs    11m16.9s/12m00.0s
+
+running (35m48.6s), 115/590 VUs, 88064 complete and 8 interrupted iterations
+short_workload    [  98% ] 094/500 VUs  34m17.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m17.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m17.9s/30m00.0s
+context_stress    [  94% ] 03/10 VUs    11m17.9s/12m00.0s
+time="2026-11-05T19:11:52Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:52Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:52Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:52Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:52Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:11:53Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (35m49.6s), 111/590 VUs, 88075 complete and 8 interrupted iterations
+short_workload    [  98% ] 090/500 VUs  34m18.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m18.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m18.9s/30m00.0s
+context_stress    [  94% ] 03/10 VUs    11m18.9s/12m00.0s
+
+running (35m50.6s), 107/590 VUs, 88086 complete and 8 interrupted iterations
+short_workload    [  98% ] 086/500 VUs  34m19.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m19.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m19.9s/30m00.0s
+context_stress    [  94% ] 03/10 VUs    11m19.9s/12m00.0s
+
+running (35m51.6s), 107/590 VUs, 88086 complete and 8 interrupted iterations
+short_workload    [  98% ] 086/500 VUs  34m20.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m20.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m20.9s/30m00.0s
+context_stress    [  95% ] 03/10 VUs    11m20.9s/12m00.0s
+
+running (35m52.6s), 107/590 VUs, 88086 complete and 8 interrupted iterations
+short_workload    [  98% ] 086/500 VUs  34m21.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m21.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m21.9s/30m00.0s
+context_stress    [  95% ] 03/10 VUs    11m21.9s/12m00.0s
+
+running (35m53.6s), 107/590 VUs, 88086 complete and 8 interrupted iterations
+short_workload    [  98% ] 086/500 VUs  34m22.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m22.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m22.9s/30m00.0s
+context_stress    [  95% ] 03/10 VUs    11m22.9s/12m00.0s
+
+running (35m54.6s), 106/590 VUs, 88086 complete and 9 interrupted iterations
+short_workload    [  98% ] 085/500 VUs  34m23.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m23.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m23.9s/30m00.0s
+context_stress    [  95% ] 03/10 VUs    11m23.9s/12m00.0s
+
+running (35m55.6s), 106/590 VUs, 88086 complete and 9 interrupted iterations
+short_workload    [  98% ] 085/500 VUs  34m24.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m24.9s/30m00.0s
+medium_workload   [  98% ] 13/60 VUs    29m24.9s/30m00.0s
+context_stress    [  95% ] 03/10 VUs    11m24.9s/12m00.0s
+
+running (35m56.6s), 104/590 VUs, 88086 complete and 11 interrupted iterations
+short_workload    [  98% ] 084/500 VUs  34m25.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m25.9s/30m00.0s
+medium_workload   [  98% ] 12/60 VUs    29m25.9s/30m00.0s
+context_stress    [  95% ] 03/10 VUs    11m25.9s/12m00.0s
+
+running (35m57.6s), 104/590 VUs, 88086 complete and 11 interrupted iterations
+short_workload    [  98% ] 084/500 VUs  34m26.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m26.9s/30m00.0s
+medium_workload   [  98% ] 12/60 VUs    29m26.9s/30m00.0s
+context_stress    [  95% ] 03/10 VUs    11m26.9s/12m00.0s
+
+running (35m58.6s), 103/590 VUs, 88086 complete and 12 interrupted iterations
+short_workload    [  98% ] 083/500 VUs  34m27.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m27.9s/30m00.0s
+medium_workload   [  98% ] 12/60 VUs    29m27.9s/30m00.0s
+context_stress    [  96% ] 03/10 VUs    11m27.9s/12m00.0s
+
+running (35m59.6s), 103/590 VUs, 88086 complete and 12 interrupted iterations
+short_workload    [  99% ] 083/500 VUs  34m28.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m28.9s/30m00.0s
+medium_workload   [  98% ] 12/60 VUs    29m28.9s/30m00.0s
+context_stress    [  96% ] 03/10 VUs    11m28.9s/12m00.0s
+
+running (36m00.6s), 103/590 VUs, 88086 complete and 12 interrupted iterations
+short_workload    [  99% ] 083/500 VUs  34m29.9s/35m00.0s
+long_workload     [  98% ] 05/20 VUs    29m29.9s/30m00.0s
+medium_workload   [  98% ] 12/60 VUs    29m29.9s/30m00.0s
+context_stress    [  96% ] 03/10 VUs    11m29.9s/12m00.0s
+
+running (36m01.6s), 101/590 VUs, 88086 complete and 14 interrupted iterations
+short_workload    [  99% ] 083/500 VUs  34m30.9s/35m00.0s
+long_workload     [  98% ] 04/20 VUs    29m30.9s/30m00.0s
+medium_workload   [  98% ] 12/60 VUs    29m30.9s/30m00.0s
+context_stress    [  96% ] 02/10 VUs    11m30.9s/12m00.0s
+time="2026-11-05T19:12:05Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:06Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:06Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:06Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m02.6s), 100/590 VUs, 88087 complete and 14 interrupted iterations
+short_workload    [  99% ] 082/500 VUs  34m31.9s/35m00.0s
+long_workload     [  98% ] 04/20 VUs    29m31.9s/30m00.0s
+medium_workload   [  98% ] 12/60 VUs    29m31.9s/30m00.0s
+context_stress    [  96% ] 02/10 VUs    11m31.9s/12m00.0s
+time="2026-11-05T19:12:07Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m03.6s), 097/590 VUs, 88090 complete and 14 interrupted iterations
+short_workload    [  99% ] 079/500 VUs  34m32.9s/35m00.0s
+long_workload     [  98% ] 04/20 VUs    29m32.9s/30m00.0s
+medium_workload   [  98% ] 12/60 VUs    29m32.9s/30m00.0s
+context_stress    [  96% ] 02/10 VUs    11m32.9s/12m00.0s
+
+running (36m04.6s), 097/590 VUs, 88090 complete and 14 interrupted iterations
+short_workload    [  99% ] 079/500 VUs  34m33.9s/35m00.0s
+long_workload     [  99% ] 04/20 VUs    29m33.9s/30m00.0s
+medium_workload   [  99% ] 12/60 VUs    29m33.9s/30m00.0s
+context_stress    [  96% ] 02/10 VUs    11m33.9s/12m00.0s
+time="2026-11-05T19:12:08Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m05.6s), 095/590 VUs, 88092 complete and 14 interrupted iterations
+short_workload    [  99% ] 078/500 VUs  34m34.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m34.9s/30m00.0s
+medium_workload   [  99% ] 12/60 VUs    29m34.9s/30m00.0s
+context_stress    [  97% ] 02/10 VUs    11m34.9s/12m00.0s
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:09Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m06.6s), 087/590 VUs, 88104 complete and 15 interrupted iterations
+short_workload    [  99% ] 071/500 VUs  34m35.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m35.9s/30m00.0s
+medium_workload   [  99% ] 11/60 VUs    29m35.9s/30m00.0s
+context_stress    [  97% ] 02/10 VUs    11m35.9s/12m00.0s
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:10Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m07.6s), 083/590 VUs, 88116 complete and 15 interrupted iterations
+short_workload    [  99% ] 067/500 VUs  34m36.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m36.9s/30m00.0s
+medium_workload   [  99% ] 11/60 VUs    29m36.9s/30m00.0s
+context_stress    [  97% ] 02/10 VUs    11m36.9s/12m00.0s
+
+running (36m08.6s), 083/590 VUs, 88116 complete and 15 interrupted iterations
+short_workload    [  99% ] 067/500 VUs  34m37.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m37.9s/30m00.0s
+medium_workload   [  99% ] 11/60 VUs    29m37.9s/30m00.0s
+context_stress    [  97% ] 02/10 VUs    11m37.9s/12m00.0s
+time="2026-11-05T19:12:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:12Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m09.6s), 081/590 VUs, 88119 complete and 15 interrupted iterations
+short_workload    [  99% ] 065/500 VUs  34m38.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m38.9s/30m00.0s
+medium_workload   [  99% ] 11/60 VUs    29m38.9s/30m00.0s
+context_stress    [  97% ] 02/10 VUs    11m38.9s/12m00.0s
+time="2026-11-05T19:12:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:13Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:14Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:14Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m10.6s), 079/590 VUs, 88125 complete and 15 interrupted iterations
+short_workload    [  99% ] 063/500 VUs  34m39.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m39.9s/30m00.0s
+medium_workload   [  99% ] 11/60 VUs    29m39.9s/30m00.0s
+context_stress    [  97% ] 02/10 VUs    11m39.9s/12m00.0s
+time="2026-11-05T19:12:14Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m11.6s), 078/590 VUs, 88126 complete and 16 interrupted iterations
+short_workload    [  99% ] 063/500 VUs  34m40.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m40.9s/30m00.0s
+medium_workload   [  99% ] 10/60 VUs    29m40.9s/30m00.0s
+context_stress    [  97% ] 02/10 VUs    11m40.9s/12m00.0s
+time="2026-11-05T19:12:15Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m12.6s), 076/590 VUs, 88128 complete and 16 interrupted iterations
+short_workload    [  99% ] 062/500 VUs  34m41.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m41.9s/30m00.0s
+medium_workload   [  99% ] 09/60 VUs    29m41.9s/30m00.0s
+context_stress    [  97% ] 02/10 VUs    11m41.9s/12m00.0s
+time="2026-11-05T19:12:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:16Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m13.6s), 071/590 VUs, 88135 complete and 16 interrupted iterations
+short_workload    [  99% ] 057/500 VUs  34m42.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m42.9s/30m00.0s
+medium_workload   [  99% ] 09/60 VUs    29m42.9s/30m00.0s
+context_stress    [  98% ] 02/10 VUs    11m42.9s/12m00.0s
+
+running (36m14.6s), 071/590 VUs, 88135 complete and 16 interrupted iterations
+short_workload    [  99% ] 057/500 VUs  34m43.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m43.9s/30m00.0s
+medium_workload   [  99% ] 09/60 VUs    29m43.9s/30m00.0s
+context_stress    [  98% ] 02/10 VUs    11m43.9s/12m00.0s
+
+running (36m15.6s), 070/590 VUs, 88135 complete and 17 interrupted iterations
+short_workload    [  99% ] 056/500 VUs  34m44.9s/35m00.0s
+long_workload     [  99% ] 03/20 VUs    29m44.9s/30m00.0s
+medium_workload   [  99% ] 09/60 VUs    29m44.9s/30m00.0s
+context_stress    [  98% ] 02/10 VUs    11m44.9s/12m00.0s
+
+running (36m16.6s), 067/590 VUs, 88135 complete and 20 interrupted iterations
+short_workload    [  99% ] 055/500 VUs  34m45.9s/35m00.0s
+long_workload     [  99% ] 02/20 VUs    29m45.9s/30m00.0s
+medium_workload   [  99% ] 08/60 VUs    29m45.9s/30m00.0s
+context_stress    [  98% ] 02/10 VUs    11m45.9s/12m00.0s
+time="2026-11-05T19:12:20Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:21Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:21Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:21Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:21Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:21Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:21Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:21Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:21Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m17.6s), 066/590 VUs, 88135 complete and 21 interrupted iterations
+short_workload    [  99% ] 054/500 VUs  34m46.9s/35m00.0s
+long_workload     [  99% ] 02/20 VUs    29m46.9s/30m00.0s
+medium_workload   [  99% ] 08/60 VUs    29m46.9s/30m00.0s
+context_stress    [  98% ] 02/10 VUs    11m46.9s/12m00.0s
+
+running (36m18.6s), 059/590 VUs, 88144 complete and 22 interrupted iterations
+short_workload    [  99% ] 048/500 VUs  34m47.9s/35m00.0s
+long_workload     [  99% ] 02/20 VUs    29m47.9s/30m00.0s
+medium_workload   [  99% ] 07/60 VUs    29m47.9s/30m00.0s
+context_stress    [  98% ] 02/10 VUs    11m47.9s/12m00.0s
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m19.6s), 058/590 VUs, 88144 complete and 23 interrupted iterations
+short_workload    [  99% ] 047/500 VUs  34m48.9s/35m00.0s
+long_workload     [  99% ] 02/20 VUs    29m48.9s/30m00.0s
+medium_workload   [  99% ] 07/60 VUs    29m48.9s/30m00.0s
+context_stress    [  98% ] 02/10 VUs    11m48.9s/12m00.0s
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:23Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m20.6s), 047/590 VUs, 88157 complete and 24 interrupted iterations
+short_workload    [ 100% ] 036/500 VUs  34m49.9s/35m00.0s
+long_workload     [  99% ] 02/20 VUs    29m49.9s/30m00.0s
+medium_workload   [  99% ] 07/60 VUs    29m49.9s/30m00.0s
+context_stress    [  99% ] 02/10 VUs    11m49.9s/12m00.0s
+
+running (36m21.6s), 047/590 VUs, 88157 complete and 24 interrupted iterations
+short_workload    [ 100% ] 036/500 VUs  34m50.9s/35m00.0s
+long_workload     [  99% ] 02/20 VUs    29m50.9s/30m00.0s
+medium_workload   [  99% ] 07/60 VUs    29m50.9s/30m00.0s
+context_stress    [  99% ] 02/10 VUs    11m50.9s/12m00.0s
+
+running (36m22.6s), 047/590 VUs, 88157 complete and 24 interrupted iterations
+short_workload    [ 100% ] 036/500 VUs  34m51.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m51.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m51.9s/30m00.0s
+context_stress    [  99% ] 02/10 VUs    11m51.9s/12m00.0s
+
+running (36m23.6s), 047/590 VUs, 88157 complete and 24 interrupted iterations
+short_workload    [ 100% ] 036/500 VUs  34m52.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m52.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m52.9s/30m00.0s
+context_stress    [  99% ] 02/10 VUs    11m52.9s/12m00.0s
+
+running (36m24.6s), 047/590 VUs, 88157 complete and 24 interrupted iterations
+short_workload    [ 100% ] 036/500 VUs  34m53.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m53.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m53.9s/30m00.0s
+context_stress    [  99% ] 02/10 VUs    11m53.9s/12m00.0s
+
+running (36m25.6s), 046/590 VUs, 88157 complete and 25 interrupted iterations
+short_workload    [ 100% ] 035/500 VUs  34m54.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m54.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m54.9s/30m00.0s
+context_stress    [  99% ] 02/10 VUs    11m54.9s/12m00.0s
+
+running (36m26.6s), 046/590 VUs, 88157 complete and 25 interrupted iterations
+short_workload    [ 100% ] 035/500 VUs  34m55.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m55.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m55.9s/30m00.0s
+context_stress    [  99% ] 02/10 VUs    11m55.9s/12m00.0s
+
+running (36m27.6s), 046/590 VUs, 88157 complete and 25 interrupted iterations
+short_workload    [ 100% ] 035/500 VUs  34m56.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m56.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m56.9s/30m00.0s
+context_stress    [ 100% ] 02/10 VUs    11m56.9s/12m00.0s
+
+running (36m28.6s), 045/590 VUs, 88157 complete and 26 interrupted iterations
+short_workload    [ 100% ] 034/500 VUs  34m57.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m57.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m57.9s/30m00.0s
+context_stress    [ 100% ] 02/10 VUs    11m57.9s/12m00.0s
+
+running (36m29.6s), 045/590 VUs, 88157 complete and 26 interrupted iterations
+short_workload    [ 100% ] 034/500 VUs  34m58.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m58.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m58.9s/30m00.0s
+context_stress    [ 100% ] 02/10 VUs    11m58.9s/12m00.0s
+
+running (36m30.6s), 045/590 VUs, 88157 complete and 26 interrupted iterations
+short_workload    [ 100% ] 034/500 VUs  34m59.9s/35m00.0s
+long_workload     [ 100% ] 02/20 VUs    29m59.9s/30m00.0s
+medium_workload   [ 100% ] 07/60 VUs    29m59.9s/30m00.0s
+context_stress    [ 100% ] 02/10 VUs    11m59.9s/12m00.0s
+
+running (36m31.6s), 042/590 VUs, 88157 complete and 29 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m32.6s), 042/590 VUs, 88157 complete and 29 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m33.6s), 042/590 VUs, 88157 complete and 29 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m34.6s), 041/590 VUs, 88157 complete and 30 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m35.6s), 040/590 VUs, 88157 complete and 31 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+time="2026-11-05T19:12:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:39Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m36.6s), 036/590 VUs, 88160 complete and 32 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:40Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m37.6s), 027/590 VUs, 88168 complete and 33 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m38.6s), 025/590 VUs, 88170 complete and 33 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+time="2026-11-05T19:12:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m39.6s), 025/590 VUs, 88170 complete and 33 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+time="2026-11-05T19:12:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:43Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:44Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:44Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m40.6s), 022/590 VUs, 88173 complete and 33 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+time="2026-11-05T19:12:45Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m41.6s), 018/590 VUs, 88175 complete and 35 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m42.6s), 017/590 VUs, 88176 complete and 35 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+time="2026-11-05T19:12:46Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:46Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m43.6s), 015/590 VUs, 88178 complete and 35 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m44.6s), 013/590 VUs, 88178 complete and 37 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m45.6s), 013/590 VUs, 88178 complete and 37 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m46.6s), 012/590 VUs, 88178 complete and 38 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m47.6s), 012/590 VUs, 88178 complete and 38 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+time="2026-11-05T19:12:51Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:51Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:51Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m48.6s), 008/590 VUs, 88181 complete and 39 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m49.6s), 008/590 VUs, 88181 complete and 39 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+time="2026-11-05T19:12:54Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:54Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+time="2026-11-05T19:12:54Z" level=warning msg="Request Failed" error="Post \"http://89.169.112.182:4000/v1/chat/completions\": dial: i/o timeout"
+
+running (36m50.6s), 006/590 VUs, 88182 complete and 40 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ↓ [ 100% ] 07/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m51.6s), 004/590 VUs, 88183 complete and 41 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m52.6s), 003/590 VUs, 88183 complete and 42 interrupted iterations
+short_workload  ↓ [ 100% ] 034/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m53.6s), 002/590 VUs, 88183 complete and 43 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m54.6s), 002/590 VUs, 88183 complete and 43 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m55.6s), 002/590 VUs, 88183 complete and 43 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m56.6s), 002/590 VUs, 88183 complete and 43 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m57.6s), 002/590 VUs, 88183 complete and 43 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m58.6s), 002/590 VUs, 88183 complete and 43 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (36m59.6s), 002/590 VUs, 88183 complete and 43 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+running (37m00.6s), 002/590 VUs, 88183 complete and 43 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ↓ [ 100% ] 02/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ↓ [ 100% ] 02/10 VUs    12m0s
+
+
+  █ THRESHOLDS 
+
+    e2e_context_ms
+    ✓ 'p(95)<240000' p(95)=51.92s
+
+    e2e_long_ms
+    ✓ 'p(95)<120000' p(95)=31.15s
+
+    e2e_medium_ms
+    ✓ 'p(95)<60000' p(95)=20.19s
+
+    e2e_short_ms
+    ✓ 'p(95)<10000' p(95)=9.36s
+
+    http_req_failed
+    ✓ 'rate<0.05' rate=2.93%
+
+    ttft_context_ms
+    ✗ 'p(95)<45000' p(95)=51.91s
+
+    ttft_long_ms
+    ✗ 'p(95)<20000' p(95)=31.15s
+
+    ttft_medium_ms
+    ✗ 'p(95)<8000' p(95)=20.19s
+
+    ttft_short_ms
+    ✗ 'p(95)<3000' p(95)=9.36s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 88188  39.712636/s
+    checks_succeeded...: 97.06% 85597 out of 88188
+    checks_failed......: 2.93%  2591 out of 88188
+
+    ✗ short status 200
+      ↳  97% — ✓ 79488 / ✗ 2317
+    ✗ medium status 200
+      ↳  95% — ✓ 4771 / ✗ 207
+    ✗ long status 200
+      ↳  95% — ✓ 1231 / ✗ 52
+    ✗ context status 200
+      ↳  87% — ✓ 107 / ✗ 15
+
+    CUSTOM
+    e2e_context_ms.................: avg=41.31s  min=29.38s   med=39.36s max=1m49s p(90)=47s    p(95)=51.92s
+    e2e_long_ms....................: avg=22.5s   min=14.31s   med=18.61s max=3m11s p(90)=25.59s p(95)=31.15s
+    e2e_medium_ms..................: avg=12.28s  min=7.23s    med=9.76s  max=2m54s p(90)=16.01s p(95)=20.19s
+    e2e_short_ms...................: avg=3.15s   min=745ms    med=1.98s  max=1m51s p(90)=6.38s  p(95)=9.36s 
+    total_tokens_generated.........: 7804801 3514.641724/s
+    tpot_context_ms................: avg=8.78µs  min=0s       med=0s     max=1ms   p(90)=0s     p(95)=0s    
+    tpot_long_ms...................: avg=9.72µs  min=0s       med=0s     max=9ms   p(90)=0s     p(95)=0s    
+    tpot_medium_ms.................: avg=11.96µs min=0s       med=0s     max=10ms  p(90)=0s     p(95)=0s    
+    tpot_short_ms..................: avg=20.04µs min=0s       med=0s     max=11ms  p(90)=0s     p(95)=0s    
+    ttft_context_ms................: avg=41.29s  min=29.36s   med=39.34s max=1m49s p(90)=46.98s p(95)=51.91s
+    ttft_long_ms...................: avg=22.49s  min=14.29s   med=18.6s  max=3m11s p(90)=25.58s p(95)=31.15s
+    ttft_medium_ms.................: avg=12.28s  min=7.22s    med=9.75s  max=2m54s p(90)=16s    p(95)=20.19s
+    ttft_short_ms..................: avg=3.15s   min=745ms    med=1.98s  max=1m51s p(90)=6.38s  p(95)=9.36s 
+
+    HTTP
+    http_req_duration..............: avg=4.31s   min=0s       med=2.09s  max=4m30s p(90)=9.28s  p(95)=12.52s
+      { expected_response:true }...: avg=3.93s   min=744.43ms med=2.1s   max=3m11s p(90)=9.28s  p(95)=12.35s
+    http_req_failed................: 2.93%   2591 out of 88188
+    http_reqs......................: 88188   39.712636/s
+
+    EXECUTION
+    iteration_duration.............: avg=5.15s   min=505.76ms med=2.62s  max=3m2s  p(90)=10.64s p(95)=16.76s
+    iterations.....................: 88183   39.710385/s
+    vus............................: 2       min=1             max=590
+    vus_max........................: 590     min=590           max=590
+
+    NETWORK
+    data_received..................: 1.5 GB  655 kB/s
+    data_sent......................: 53 MB   24 kB/s
+
+
+
+
+running (37m00.7s), 000/590 VUs, 88183 complete and 45 interrupted iterations
+short_workload  ✓ [ 100% ] 000/500 VUs  35m0s
+long_workload   ✓ [ 100% ] 01/20 VUs    30m0s
+medium_workload ✓ [ 100% ] 00/60 VUs    30m0s
+context_stress  ✓ [ 100% ] 01/10 VUs    12m0s
+time="2026-11-05T19:13:05Z" level=error msg="thresholds on metrics 'ttft_context_ms, ttft_long_ms, ttft_medium_ms, ttft_short_ms' have been crossed"
