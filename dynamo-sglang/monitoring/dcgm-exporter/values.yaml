@@ -18,7 +18,7 @@ tolerations:
     effect: NoSchedule
 
 nodeSelector:
-  nvidia.com/gpu.present: "true"
+  nebius.com/gpu: "true"
 
 resources:
   requests:

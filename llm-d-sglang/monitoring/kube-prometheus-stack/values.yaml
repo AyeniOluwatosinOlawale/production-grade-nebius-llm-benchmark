@@ -21,7 +21,7 @@ prometheus:
     storageSpec:
       volumeClaimTemplate:
         spec:
-          storageClassName: nebius-network-ssd
+          storageClassName: compute-csi-default-sc
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:
@@ -81,7 +81,7 @@ grafana:
 
   persistence:
     enabled: true
-    storageClassName: nebius-network-ssd
+    storageClassName: compute-csi-default-sc
     size: 10Gi
 
   dashboardProviders:

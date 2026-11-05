@@ -19,7 +19,7 @@ spec:
     spec:
       terminationGracePeriodSeconds: 120
       nodeSelector:
-        nvidia.com/gpu.present: "true"
+        nebius.com/gpu: "true"
       tolerations:
         - key: cloud.nebius.ai/preemptible
           operator: Exists
@@ -51,10 +51,7 @@ spec:
             - name: HF_HOME
               value: /models
             - name: HUGGING_FACE_HUB_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: hf-token
-                  key: token
+              value: ""
           ports:
             - name: http
               containerPort: 8000

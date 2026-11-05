@@ -187,9 +187,9 @@ export const options = {
       exec: 'shortWorkload',
       stages: [
         { duration: '5m',  target: 20  },  // warm-up
-        { duration: '8m',  target: 80  },  // ramp to trigger KEDA
-        { duration: '10m', target: 80  },  // hold — model loading window
-        { duration: '7m',  target: 100 },  // peak concurrency
+        { duration: '8m',  target: 150 },  // ramp to trigger KEDA
+        { duration: '10m', target: 150 },  // hold — KEDA verify window
+        { duration: '7m',  target: 500 },  // stress peak — force queue buildup
         { duration: '5m',  target: 0   },  // ramp down
       ],
     },

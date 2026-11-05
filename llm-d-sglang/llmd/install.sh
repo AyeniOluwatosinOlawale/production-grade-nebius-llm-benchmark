@@ -1,48 +1,18 @@
-#!/usr/bin/env bash
-# install.sh — Install llm-d into the cluster
-# llm-d provides a Kubernetes-native inference scheduler that sits between
-# the LiteLLM proxy and the SGLang engine pods.
-#
-# Docs: https://github.com/llm-d/llm-d
+#!/bin/bash
+# Install Gateway API CRDs and inference extension CRDs for llm-d stacks.
+# We route LiteLLM directly to the vLLM Service (no EPP/gateway needed for benchmarking).
 set -euo pipefail
 
-LLMD_VERSION="${LLMD_VERSION:-v0.0.5}"
-LLMD_NAMESPACE="llm-d-system"
+echo "==> Installing Gateway API CRDs (v1.1.0)..."
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml
 
-echo "==> Installing llm-d ${LLMD_VERSION} into namespace ${LLMD_NAMESPACE}"
+echo "==> Waiting for Gateway API CRDs..."
+kubectl wait --for=condition=Established crd/gateways.gateway.networking.k8s.io --timeout=60s
+kubectl wait --for=condition=Established crd/httproutes.gateway.networking.k8s.io --timeout=60s
 
-# 1. Add and update the llm-d Helm repository
-helm repo add llm-d https://llm-d.github.io/llm-d-deployer/charts || true
-helm repo update
+echo "==> Installing inference extension CRDs (InferencePool, InferenceModel)..."
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api-inference-extension/releases/download/v0.5.0/manifests.yaml || \
+  echo "WARN: inference extension CRDs may already be installed or URL changed — continuing"
 
-# 2. Create namespace
-kubectl create namespace "${LLMD_NAMESPACE}" --dry-run=client -o yaml | kubectl apply -f -
-
-# 3. Install / upgrade llm-d
-helm upgrade --install llm-d llm-d/llm-d \
-  --namespace "${LLMD_NAMESPACE}" \
-  --version "${LLMD_VERSION}" \
-  --set controller.replicaCount=2 \
-  --set epp.replicaCount=2 \
-  --set metrics.enabled=true \
-  --set metrics.serviceMonitor.enabled=true \
-  --set metrics.serviceMonitor.additionalLabels.release=kube-prometheus-stack \
-  --wait \
-  --timeout 5m
-
-echo "==> llm-d installed successfully"
-
-# 4. Wait for the EPP (Endpoint Picker Policy) pod to be ready
-echo "==> Waiting for llm-d EPP pods to become ready..."
-kubectl rollout status deployment/llm-d-epp \
-  --namespace "${LLMD_NAMESPACE}" \
-  --timeout=120s
-
-echo "==> llm-d is ready"
-
-# 5. Apply InferencePool and InferenceModel CRDs
-echo "==> Applying InferencePool and InferenceModel..."
-kubectl apply -f "$(dirname "$0")/inferencepool.yaml"
-kubectl apply -f "$(dirname "$0")/inferencemodel.yaml"
-
-echo "==> llm-d setup complete"
+echo "==> llm-d CRD setup complete."
+echo "    Routing: LiteLLM -> vllm-qwen3 Service -> vLLM pods (KEDA autoscaling)"

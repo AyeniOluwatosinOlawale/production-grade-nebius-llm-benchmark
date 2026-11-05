@@ -22,7 +22,7 @@ spec:
   nodeTemplate:
     metadata:
       labels:
-        nvidia.com/gpu.present: "true"
+        nebius.com/gpu: "true"
         node-role: gpu-inference
         engine: sglang
       annotations:

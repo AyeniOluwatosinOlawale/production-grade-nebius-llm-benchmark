@@ -11,4 +11,4 @@ spec:
   resources:
     requests:
       storage: 100Gi
-  storageClassName: nebius-network-ssd
+  storageClassName: compute-csi-default-sc

@@ -8,7 +8,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: nebius-network-ssd
+  storageClassName: compute-csi-default-sc
   resources:
     requests:
       storage: 100Gi

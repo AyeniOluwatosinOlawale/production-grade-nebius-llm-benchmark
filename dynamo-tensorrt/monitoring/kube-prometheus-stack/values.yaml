@@ -6,7 +6,7 @@ prometheus:
     storageSpec:
       volumeClaimTemplate:
         spec:
-          storageClassName: nebius-network-ssd
+          storageClassName: compute-csi-default-sc
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:
@@ -43,7 +43,7 @@ alertmanager:
     storage:
       volumeClaimTemplate:
         spec:
-          storageClassName: nebius-network-ssd
+          storageClassName: compute-csi-default-sc
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:

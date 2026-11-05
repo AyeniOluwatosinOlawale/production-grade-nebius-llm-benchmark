@@ -1,23 +1,18 @@
-#!/usr/bin/env bash
-# Install llm-d (Kubernetes Gateway API + llm-d operator + EPP)
-# Docs: https://github.com/llm-d/llm-d
+#!/bin/bash
+# Install Gateway API CRDs and inference extension CRDs for llm-d stacks.
+# We route LiteLLM directly to the vLLM Service (no EPP/gateway needed for benchmarking).
 set -euo pipefail
 
-echo "==> Installing Gateway API CRDs (standard channel)..."
-kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/standard-install.yaml
+echo "==> Installing Gateway API CRDs (v1.1.0)..."
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml
 
-echo "==> Installing llm-d operator via Helm..."
-helm repo add llm-d https://llm-d.github.io/llm-d-helm || true
-helm repo update
+echo "==> Waiting for Gateway API CRDs..."
+kubectl wait --for=condition=Established crd/gateways.gateway.networking.k8s.io --timeout=60s
+kubectl wait --for=condition=Established crd/httproutes.gateway.networking.k8s.io --timeout=60s
 
-helm upgrade --install llm-d llm-d/llm-d \
-  --namespace llm-d-system \
-  --create-namespace \
-  --set epp.image.tag=latest \
-  --wait --timeout=5m
+echo "==> Installing inference extension CRDs (InferencePool, InferenceModel)..."
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api-inference-extension/releases/download/v0.5.0/manifests.yaml || \
+  echo "WARN: inference extension CRDs may already be installed or URL changed — continuing"
 
-echo "==> Waiting for llm-d EPP to be ready..."
-kubectl rollout status deployment/llm-d-epp -n llm-d-system --timeout=3m
-
-echo "==> llm-d installed successfully."
-kubectl get pods -n llm-d-system
+echo "==> llm-d CRD setup complete."
+echo "    Routing: LiteLLM -> vllm-qwen3 Service -> vLLM pods (KEDA autoscaling)"

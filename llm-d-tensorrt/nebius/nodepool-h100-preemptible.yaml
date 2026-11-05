@@ -40,7 +40,7 @@ spec:
   # Node labels applied to all nodes in this group
   nodeLabels:
     nebius.com/node-group: gpu-h100-preemptible
-    nvidia.com/gpu.present: "true"
+    nebius.com/gpu: "true"
 
   # Taints — pods must tolerate these to schedule on GPU nodes
   nodeTaints:
