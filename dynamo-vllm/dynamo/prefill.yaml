@@ -84,19 +84,11 @@ spec:
             - name: shm
               mountPath: /dev/shm
           readinessProbe:
-            httpGet:
-              path: /health
-              port: 8000
-            initialDelaySeconds: 300
-            periodSeconds: 30
-            failureThreshold: 20
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8000
-            initialDelaySeconds: 600
-            periodSeconds: 30
-            failureThreshold: 5
+            exec:
+              command: ["python3", "-c", "import socket; s=socket.create_connection(('nats.dynamo-vllm',4222),timeout=3); s.close()"]
+            initialDelaySeconds: 60
+            periodSeconds: 15
+            failureThreshold: 10
       volumes:
         - name: model-cache
           persistentVolumeClaim:

@@ -25,9 +25,9 @@ spec:
       metadata:
         serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: vllm_requests_waiting
-        query: sum(vllm:num_requests_waiting{namespace="llm-d-vllm"})
-        threshold: "5"
-        activationThreshold: "1"
+        query: sum(vllm:num_requests_waiting)
+        threshold: "1"
+        activationThreshold: "0"
 
     # Secondary: scale on average GPU utilisation > 70%
     - type: prometheus
