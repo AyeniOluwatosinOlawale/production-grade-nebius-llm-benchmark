@@ -1,0 +1,531 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: load-test/load-10k-ramp.js
+        output: json (load-test/reports/dynamo-vllm-run2.json)
+
+     scenarios: (100.00%) 4 scenarios, 590 max VUs, 35m30s max duration (incl. graceful stop):
+              * short_workload: Up to 500 looping VUs for 35m0s over 5 stages (gracefulRampDown: 30s, exec: shortWorkload, gracefulStop: 30s)
+              * long_workload: Up to 20 looping VUs for 30m0s over 4 stages (gracefulRampDown: 30s, exec: longWorkload, startTime: 5m0s, gracefulStop: 30s)
+              * medium_workload: Up to 60 looping VUs for 30m0s over 4 stages (gracefulRampDown: 30s, exec: mediumWorkload, startTime: 5m0s, gracefulStop: 30s)
+              * context_stress: Up to 10 looping VUs for 12m0s over 3 stages (gracefulRampDown: 30s, exec: contextWorkload, startTime: 23m0s, gracefulStop: 30s)
+
+
+running (00m00.9s), 001/590 VUs, 0 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m00.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m59.1s
+medium_workload • [   0% ] waiting      4m59.1s
+context_stress  • [   0% ] waiting      22m59.1s
+
+running (00m01.9s), 001/590 VUs, 1 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m01.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m58.1s
+medium_workload • [   0% ] waiting      4m58.1s
+context_stress  • [   0% ] waiting      22m58.1s
+
+running (00m02.9s), 001/590 VUs, 3 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m02.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m57.1s
+medium_workload • [   0% ] waiting      4m57.1s
+context_stress  • [   0% ] waiting      22m57.1s
+
+running (00m03.9s), 001/590 VUs, 4 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m03.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m56.1s
+medium_workload • [   0% ] waiting      4m56.1s
+context_stress  • [   0% ] waiting      22m56.1s
+
+running (00m04.9s), 001/590 VUs, 6 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m04.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m55.1s
+medium_workload • [   0% ] waiting      4m55.1s
+context_stress  • [   0% ] waiting      22m55.1s
+
+running (00m05.9s), 001/590 VUs, 8 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m05.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m54.1s
+medium_workload • [   0% ] waiting      4m54.1s
+context_stress  • [   0% ] waiting      22m54.1s
+
+running (00m07.0s), 001/590 VUs, 9 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m07.0s/35m00.0s
+long_workload   • [   0% ] waiting      4m53.0s
+medium_workload • [   0% ] waiting      4m53.0s
+context_stress  • [   0% ] waiting      22m53.0s
+
+running (00m07.9s), 001/590 VUs, 11 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m07.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m52.1s
+medium_workload • [   0% ] waiting      4m52.1s
+context_stress  • [   0% ] waiting      22m52.1s
+
+running (00m08.9s), 001/590 VUs, 13 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m08.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m51.1s
+medium_workload • [   0% ] waiting      4m51.1s
+context_stress  • [   0% ] waiting      22m51.1s
+
+running (00m09.9s), 001/590 VUs, 14 complete and 0 interrupted iterations
+short_workload    [   0% ] 001/500 VUs  00m09.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m50.1s
+medium_workload • [   0% ] waiting      4m50.1s
+context_stress  • [   0% ] waiting      22m50.1s
+
+running (00m10.9s), 001/590 VUs, 16 complete and 0 interrupted iterations
+short_workload    [   1% ] 001/500 VUs  00m10.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m49.1s
+medium_workload • [   0% ] waiting      4m49.1s
+context_stress  • [   0% ] waiting      22m49.1s
+
+running (00m11.9s), 001/590 VUs, 17 complete and 0 interrupted iterations
+short_workload    [   1% ] 001/500 VUs  00m11.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m48.1s
+medium_workload • [   0% ] waiting      4m48.1s
+context_stress  • [   0% ] waiting      22m48.1s
+
+running (00m12.9s), 001/590 VUs, 19 complete and 0 interrupted iterations
+short_workload    [   1% ] 001/500 VUs  00m12.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m47.1s
+medium_workload • [   0% ] waiting      4m47.1s
+context_stress  • [   0% ] waiting      22m47.1s
+
+running (00m13.9s), 001/590 VUs, 20 complete and 0 interrupted iterations
+short_workload    [   1% ] 001/500 VUs  00m13.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m46.1s
+medium_workload • [   0% ] waiting      4m46.1s
+context_stress  • [   0% ] waiting      22m46.1s
+
+running (00m14.9s), 001/590 VUs, 22 complete and 0 interrupted iterations
+short_workload    [   1% ] 001/500 VUs  00m14.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m45.1s
+medium_workload • [   0% ] waiting      4m45.1s
+context_stress  • [   0% ] waiting      22m45.1s
+
+running (00m15.9s), 002/590 VUs, 24 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m15.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m44.1s
+medium_workload • [   0% ] waiting      4m44.1s
+context_stress  • [   0% ] waiting      22m44.1s
+
+running (00m16.9s), 002/590 VUs, 25 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m16.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m43.1s
+medium_workload • [   0% ] waiting      4m43.1s
+context_stress  • [   0% ] waiting      22m43.1s
+
+running (00m17.9s), 002/590 VUs, 28 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m17.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m42.1s
+medium_workload • [   0% ] waiting      4m42.1s
+context_stress  • [   0% ] waiting      22m42.1s
+
+running (00m18.9s), 002/590 VUs, 32 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m18.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m41.1s
+medium_workload • [   0% ] waiting      4m41.1s
+context_stress  • [   0% ] waiting      22m41.1s
+
+running (00m19.9s), 002/590 VUs, 35 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m19.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m40.1s
+medium_workload • [   0% ] waiting      4m40.1s
+context_stress  • [   0% ] waiting      22m40.1s
+
+running (00m20.9s), 002/590 VUs, 38 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m20.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m39.1s
+medium_workload • [   0% ] waiting      4m39.1s
+context_stress  • [   0% ] waiting      22m39.1s
+
+running (00m21.9s), 002/590 VUs, 41 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m21.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m38.1s
+medium_workload • [   0% ] waiting      4m38.1s
+context_stress  • [   0% ] waiting      22m38.1s
+
+running (00m22.9s), 002/590 VUs, 44 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m22.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m37.1s
+medium_workload • [   0% ] waiting      4m37.1s
+context_stress  • [   0% ] waiting      22m37.1s
+
+running (00m23.9s), 002/590 VUs, 48 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m23.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m36.1s
+medium_workload • [   0% ] waiting      4m36.1s
+context_stress  • [   0% ] waiting      22m36.1s
+
+running (00m24.9s), 002/590 VUs, 51 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m24.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m35.1s
+medium_workload • [   0% ] waiting      4m35.1s
+context_stress  • [   0% ] waiting      22m35.1s
+
+running (00m25.9s), 002/590 VUs, 54 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m25.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m34.1s
+medium_workload • [   0% ] waiting      4m34.1s
+context_stress  • [   0% ] waiting      22m34.1s
+
+running (00m26.9s), 002/590 VUs, 57 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m26.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m33.1s
+medium_workload • [   0% ] waiting      4m33.1s
+context_stress  • [   0% ] waiting      22m33.1s
+
+running (00m27.9s), 002/590 VUs, 61 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m27.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m32.1s
+medium_workload • [   0% ] waiting      4m32.1s
+context_stress  • [   0% ] waiting      22m32.1s
+
+running (00m28.9s), 002/590 VUs, 64 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m28.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m31.1s
+medium_workload • [   0% ] waiting      4m31.1s
+context_stress  • [   0% ] waiting      22m31.1s
+
+running (00m29.9s), 002/590 VUs, 67 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m29.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m30.1s
+medium_workload • [   0% ] waiting      4m30.1s
+context_stress  • [   0% ] waiting      22m30.1s
+
+running (00m30.9s), 002/590 VUs, 71 complete and 0 interrupted iterations
+short_workload    [   1% ] 002/500 VUs  00m30.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m29.1s
+medium_workload • [   0% ] waiting      4m29.1s
+context_stress  • [   0% ] waiting      22m29.1s
+
+running (00m31.9s), 003/590 VUs, 74 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m31.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m28.1s
+medium_workload • [   0% ] waiting      4m28.1s
+context_stress  • [   0% ] waiting      22m28.1s
+
+running (00m32.9s), 003/590 VUs, 78 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m32.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m27.1s
+medium_workload • [   0% ] waiting      4m27.1s
+context_stress  • [   0% ] waiting      22m27.1s
+
+running (00m33.9s), 003/590 VUs, 82 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m33.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m26.1s
+medium_workload • [   0% ] waiting      4m26.1s
+context_stress  • [   0% ] waiting      22m26.1s
+
+running (00m34.9s), 003/590 VUs, 87 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m34.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m25.1s
+medium_workload • [   0% ] waiting      4m25.1s
+context_stress  • [   0% ] waiting      22m25.1s
+
+running (00m35.9s), 003/590 VUs, 92 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m35.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m24.1s
+medium_workload • [   0% ] waiting      4m24.1s
+context_stress  • [   0% ] waiting      22m24.1s
+
+running (00m36.9s), 003/590 VUs, 97 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m36.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m23.1s
+medium_workload • [   0% ] waiting      4m23.1s
+context_stress  • [   0% ] waiting      22m23.1s
+
+running (00m37.9s), 003/590 VUs, 101 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m37.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m22.1s
+medium_workload • [   0% ] waiting      4m22.1s
+context_stress  • [   0% ] waiting      22m22.1s
+
+running (00m38.9s), 003/590 VUs, 107 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m38.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m21.1s
+medium_workload • [   0% ] waiting      4m21.1s
+context_stress  • [   0% ] waiting      22m21.1s
+
+running (00m39.9s), 003/590 VUs, 110 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m39.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m20.1s
+medium_workload • [   0% ] waiting      4m20.1s
+context_stress  • [   0% ] waiting      22m20.1s
+
+running (00m40.9s), 003/590 VUs, 116 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m40.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m19.1s
+medium_workload • [   0% ] waiting      4m19.1s
+context_stress  • [   0% ] waiting      22m19.1s
+
+running (00m41.9s), 003/590 VUs, 119 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m41.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m18.1s
+medium_workload • [   0% ] waiting      4m18.1s
+context_stress  • [   0% ] waiting      22m18.1s
+
+running (00m42.9s), 003/590 VUs, 125 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m42.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m17.1s
+medium_workload • [   0% ] waiting      4m17.1s
+context_stress  • [   0% ] waiting      22m17.1s
+
+running (00m43.9s), 003/590 VUs, 130 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m43.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m16.1s
+medium_workload • [   0% ] waiting      4m16.1s
+context_stress  • [   0% ] waiting      22m16.1s
+
+running (00m44.9s), 003/590 VUs, 134 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m44.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m15.1s
+medium_workload • [   0% ] waiting      4m15.1s
+context_stress  • [   0% ] waiting      22m15.1s
+
+running (00m45.9s), 003/590 VUs, 140 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m45.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m14.1s
+medium_workload • [   0% ] waiting      4m14.1s
+context_stress  • [   0% ] waiting      22m14.1s
+
+running (00m46.9s), 003/590 VUs, 143 complete and 0 interrupted iterations
+short_workload    [   2% ] 003/500 VUs  00m46.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m13.1s
+medium_workload • [   0% ] waiting      4m13.1s
+context_stress  • [   0% ] waiting      22m13.1s
+
+running (00m47.9s), 004/590 VUs, 149 complete and 0 interrupted iterations
+short_workload    [   2% ] 004/500 VUs  00m47.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m12.1s
+medium_workload • [   0% ] waiting      4m12.1s
+context_stress  • [   0% ] waiting      22m12.1s
+
+running (00m49.0s), 004/590 VUs, 155 complete and 0 interrupted iterations
+short_workload    [   2% ] 004/500 VUs  00m48.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m11.1s
+medium_workload • [   0% ] waiting      4m11.1s
+context_stress  • [   0% ] waiting      22m11.1s
+
+running (00m49.9s), 004/590 VUs, 160 complete and 0 interrupted iterations
+short_workload    [   2% ] 004/500 VUs  00m49.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m10.1s
+medium_workload • [   0% ] waiting      4m10.1s
+context_stress  • [   0% ] waiting      22m10.1s
+
+running (00m50.9s), 004/590 VUs, 167 complete and 0 interrupted iterations
+short_workload    [   2% ] 004/500 VUs  00m50.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m09.1s
+medium_workload • [   0% ] waiting      4m09.1s
+context_stress  • [   0% ] waiting      22m09.1s
+
+running (00m51.9s), 004/590 VUs, 173 complete and 0 interrupted iterations
+short_workload    [   2% ] 004/500 VUs  00m51.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m08.1s
+medium_workload • [   0% ] waiting      4m08.1s
+context_stress  • [   0% ] waiting      22m08.1s
+
+running (00m52.9s), 004/590 VUs, 180 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  00m52.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m07.1s
+medium_workload • [   0% ] waiting      4m07.1s
+context_stress  • [   0% ] waiting      22m07.1s
+
+running (00m53.9s), 004/590 VUs, 187 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  00m53.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m06.1s
+medium_workload • [   0% ] waiting      4m06.1s
+context_stress  • [   0% ] waiting      22m06.1s
+
+running (00m54.9s), 004/590 VUs, 192 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  00m54.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m05.1s
+medium_workload • [   0% ] waiting      4m05.1s
+context_stress  • [   0% ] waiting      22m05.1s
+
+running (00m55.9s), 004/590 VUs, 199 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  00m55.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m04.1s
+medium_workload • [   0% ] waiting      4m04.1s
+context_stress  • [   0% ] waiting      22m04.1s
+
+running (00m56.9s), 004/590 VUs, 207 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  00m56.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m03.1s
+medium_workload • [   0% ] waiting      4m03.1s
+context_stress  • [   0% ] waiting      22m03.1s
+
+running (00m57.9s), 004/590 VUs, 212 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  00m57.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m02.1s
+medium_workload • [   0% ] waiting      4m02.1s
+context_stress  • [   0% ] waiting      22m02.1s
+
+running (00m58.9s), 004/590 VUs, 219 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  00m58.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m01.1s
+medium_workload • [   0% ] waiting      4m01.1s
+context_stress  • [   0% ] waiting      22m01.1s
+
+running (00m59.9s), 004/590 VUs, 223 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  00m59.9s/35m00.0s
+long_workload   • [   0% ] waiting      4m00.1s
+medium_workload • [   0% ] waiting      4m00.1s
+context_stress  • [   0% ] waiting      22m00.1s
+
+running (01m00.9s), 004/590 VUs, 231 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  01m00.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m59.1s
+medium_workload • [   0% ] waiting      3m59.1s
+context_stress  • [   0% ] waiting      21m59.1s
+
+running (01m01.9s), 004/590 VUs, 237 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  01m01.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m58.1s
+medium_workload • [   0% ] waiting      3m58.1s
+context_stress  • [   0% ] waiting      21m58.1s
+
+running (01m02.9s), 004/590 VUs, 243 complete and 0 interrupted iterations
+short_workload    [   3% ] 004/500 VUs  01m02.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m57.1s
+medium_workload • [   0% ] waiting      3m57.1s
+context_stress  • [   0% ] waiting      21m57.1s
+
+running (01m03.9s), 005/590 VUs, 249 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m03.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m56.1s
+medium_workload • [   0% ] waiting      3m56.1s
+context_stress  • [   0% ] waiting      21m56.1s
+
+running (01m04.9s), 005/590 VUs, 256 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m04.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m55.1s
+medium_workload • [   0% ] waiting      3m55.1s
+context_stress  • [   0% ] waiting      21m55.1s
+
+running (01m05.9s), 005/590 VUs, 266 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m05.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m54.1s
+medium_workload • [   0% ] waiting      3m54.1s
+context_stress  • [   0% ] waiting      21m54.1s
+
+running (01m06.9s), 005/590 VUs, 272 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m06.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m53.1s
+medium_workload • [   0% ] waiting      3m53.1s
+context_stress  • [   0% ] waiting      21m53.1s
+
+running (01m07.9s), 005/590 VUs, 281 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m07.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m52.1s
+medium_workload • [   0% ] waiting      3m52.1s
+context_stress  • [   0% ] waiting      21m52.1s
+
+running (01m08.9s), 005/590 VUs, 287 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m08.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m51.1s
+medium_workload • [   0% ] waiting      3m51.1s
+context_stress  • [   0% ] waiting      21m51.1s
+
+running (01m09.9s), 005/590 VUs, 296 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m09.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m50.1s
+medium_workload • [   0% ] waiting      3m50.1s
+context_stress  • [   0% ] waiting      21m50.1s
+
+running (01m10.9s), 005/590 VUs, 306 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m10.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m49.1s
+medium_workload • [   0% ] waiting      3m49.1s
+context_stress  • [   0% ] waiting      21m49.1s
+
+running (01m11.9s), 005/590 VUs, 312 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m11.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m48.1s
+medium_workload • [   0% ] waiting      3m48.1s
+context_stress  • [   0% ] waiting      21m48.1s
+
+running (01m12.9s), 005/590 VUs, 321 complete and 0 interrupted iterations
+short_workload    [   3% ] 005/500 VUs  01m12.9s/35m00.0s
+long_workload   • [   0% ] waiting      3m47.1s
+medium_workload • [   0% ] waiting      3m47.1s
+context_stress  • [   0% ] waiting      21m47.1s
+
+
+  █ THRESHOLDS 
+
+    e2e_context_ms
+    ✓ 'p(95)<240000' p(95)=0s
+
+    e2e_long_ms
+    ✓ 'p(95)<120000' p(95)=0s
+
+    e2e_medium_ms
+    ✓ 'p(95)<60000' p(95)=0s
+
+    e2e_short_ms
+    ✓ 'p(95)<10000' p(95)=0s
+
+    http_req_failed
+    ✗ 'rate<0.05' rate=100.00%
+
+    ttft_context_ms
+    ✓ 'p(95)<45000' p(95)=0s
+
+    ttft_long_ms
+    ✓ 'p(95)<20000' p(95)=0s
+
+    ttft_medium_ms
+    ✓ 'p(95)<8000' p(95)=0s
+
+    ttft_short_ms
+    ✓ 'p(95)<3000' p(95)=0s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 327     4.453476/s
+    checks_succeeded...: 0.00%   0 out of 327
+    checks_failed......: 100.00% 327 out of 327
+
+    ✗ short status 200
+      ↳  0% — ✓ 0 / ✗ 327
+
+    CUSTOM
+    e2e_context_ms.......: avg=0s       min=0s      med=0s       max=0s    p(90)=0s       p(95)=0s      
+    e2e_long_ms..........: avg=0s       min=0s      med=0s       max=0s    p(90)=0s       p(95)=0s      
+    e2e_medium_ms........: avg=0s       min=0s      med=0s       max=0s    p(90)=0s       p(95)=0s      
+    e2e_short_ms.........: avg=0s       min=0s      med=0s       max=0s    p(90)=0s       p(95)=0s      
+    ttft_context_ms......: avg=0s       min=0s      med=0s       max=0s    p(90)=0s       p(95)=0s      
+    ttft_long_ms.........: avg=0s       min=0s      med=0s       max=0s    p(90)=0s       p(95)=0s      
+    ttft_medium_ms.......: avg=0s       min=0s      med=0s       max=0s    p(90)=0s       p(95)=0s      
+    ttft_short_ms........: avg=0s       min=0s      med=0s       max=0s    p(90)=0s       p(95)=0s      
+
+    HTTP
+    http_req_duration....: avg=137.18ms min=79.8ms  med=113.93ms max=1.09s p(90)=177.46ms p(95)=213.87ms
+    http_req_failed......: 100.00% 327 out of 327
+    http_reqs............: 327     4.453476/s
+
+    EXECUTION
+    iteration_duration...: avg=639.66ms min=580.2ms med=615.1ms  max=1.71s p(90)=676.43ms p(95)=715.54ms
+    iterations...........: 326     4.439857/s
+    vus..................: 5       min=1          max=5  
+    vus_max..............: 590     min=590        max=590
+
+    NETWORK
+    data_received........: 157 kB  2.1 kB/s
+    data_sent............: 125 kB  1.7 kB/s
+
+
+
+
+running (01m13.4s), 000/590 VUs, 326 complete and 5 interrupted iterations
+short_workload  ✗ [   3% ] 003/500 VUs  01m13.4s/35m00.0s
+long_workload   • [   0% ] waiting      3m46.6s
+medium_workload • [   0% ] waiting      3m46.6s
+context_stress  • [   0% ] waiting      21m46.6s
+time="2026-11-05T18:33:57Z" level=error msg="test run was aborted because k6 received a 'terminated' signal"
