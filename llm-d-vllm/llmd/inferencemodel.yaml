@@ -3,7 +3,7 @@ apiVersion: inference.networking.x-k8s.io/v1alpha2
 kind: InferenceModel
 metadata:
   name: qwen3-27b
-  namespace: llm-inference
+  namespace: llm-d-vllm
 spec:
   # Must match the served-model-name in vLLM args
   modelName: qwen3-27b

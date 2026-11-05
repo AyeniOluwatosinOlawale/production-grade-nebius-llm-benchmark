@@ -9,7 +9,7 @@ metadata:
 spec:
   namespaceSelector:
     matchNames:
-      - llm-inference
+      - llm-d-vllm
   selector:
     matchLabels:
       app: vllm-qwen3

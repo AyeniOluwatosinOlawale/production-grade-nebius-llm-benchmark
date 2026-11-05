@@ -8,7 +8,7 @@ metadata:
 spec:
   namespaceSelector:
     matchNames:
-      - llm-inference
+      - dynamo-vllm
   selector:
     matchLabels:
       app: vllm-decode
@@ -29,7 +29,7 @@ metadata:
 spec:
   namespaceSelector:
     matchNames:
-      - llm-inference
+      - dynamo-vllm
   selector:
     matchLabels:
       app: vllm-prefill

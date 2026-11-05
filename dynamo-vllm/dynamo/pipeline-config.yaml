@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dynamo-pipeline-config
-  namespace: llm-inference
+  namespace: dynamo-vllm
 data:
   pipeline.yaml: |
     Common:
@@ -37,8 +37,8 @@ data:
       disagg_role: decode
 
     NatsConfig:
-      url: "nats://nats.llm-inference:4222"
+      url: "nats://nats.dynamo-vllm:4222"
 
     EtcdConfig:
       endpoints:
-        - "etcd.llm-inference:2379"
+        - "etcd.dynamo-vllm:2379"

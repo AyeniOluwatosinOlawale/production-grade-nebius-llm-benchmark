@@ -22,7 +22,7 @@
       "options": {"legend": {"calcs": ["mean","max"], "displayMode": "table", "placement": "bottom"}, "tooltip": {"mode": "multi"}},
       "targets": [
         {
-          "expr": "DCGM_FI_DEV_GPU_UTIL{namespace=\"llm-inference\"}",
+          "expr": "DCGM_FI_DEV_GPU_UTIL{namespace=\"llm-d-vllm\"}",
           "legendFormat": "GPU {{gpu}} on {{instance}}",
           "refId": "A"
         }
@@ -41,7 +41,7 @@
       "options": {"legend": {"calcs": ["mean","max"], "displayMode": "table", "placement": "bottom"}, "tooltip": {"mode": "multi"}},
       "targets": [
         {
-          "expr": "DCGM_FI_DEV_FB_USED{namespace=\"llm-inference\"} / 1024",
+          "expr": "DCGM_FI_DEV_FB_USED{namespace=\"llm-d-vllm\"} / 1024",
           "legendFormat": "VRAM Used GiB — GPU {{gpu}}",
           "refId": "A"
         }
@@ -60,7 +60,7 @@
       "options": {"legend": {"calcs": ["mean","max"], "displayMode": "table", "placement": "bottom"}, "tooltip": {"mode": "multi"}},
       "targets": [
         {
-          "expr": "DCGM_FI_DEV_POWER_USAGE{namespace=\"llm-inference\"}",
+          "expr": "DCGM_FI_DEV_POWER_USAGE{namespace=\"llm-d-vllm\"}",
           "legendFormat": "Power W — GPU {{gpu}}",
           "refId": "A"
         }
@@ -84,7 +84,7 @@
       "options": {"orientation": "auto", "reduceOptions": {"calcs": ["lastNotNull"]}, "showThresholdLabels": false, "showThresholdMarkers": true},
       "targets": [
         {
-          "expr": "avg(DCGM_FI_DEV_GPU_TEMP{namespace=\"llm-inference\"})",
+          "expr": "avg(DCGM_FI_DEV_GPU_TEMP{namespace=\"llm-d-vllm\"})",
           "legendFormat": "Avg GPU Temp",
           "refId": "A"
         }

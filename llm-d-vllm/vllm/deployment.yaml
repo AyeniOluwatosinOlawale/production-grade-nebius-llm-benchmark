@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vllm-qwen3
-  namespace: llm-inference
+  namespace: llm-d-vllm
   labels:
     app: vllm-qwen3
 spec:
-  replicas: 2  # minReplicas=2 — KEDA will scale up from here
+  replicas: 1
   selector:
     matchLabels:
       app: vllm-qwen3
@@ -35,7 +35,7 @@ spec:
 
       # Prefer GPU nodes
       nodeSelector:
-        nvidia.com/gpu.present: "true"
+        nebius.com/gpu: "true"
 
       # Graceful shutdown — allow in-flight requests to complete
       terminationGracePeriodSeconds: 120

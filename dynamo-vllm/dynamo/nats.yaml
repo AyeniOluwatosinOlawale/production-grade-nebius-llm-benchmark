@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nats
-  namespace: llm-inference
+  namespace: dynamo-vllm
   labels:
     app: nats
 spec:
@@ -18,7 +18,7 @@ spec:
       containers:
         - name: nats
           image: nats:2.15.2-alpine
-          args: ["--js", "--max_payload=8MB", "--max_pending=64MB"]
+          args: ["-js"]
           ports:
             - containerPort: 4222
               name: client
@@ -42,7 +42,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nats
-  namespace: llm-inference
+  namespace: dynamo-vllm
   labels:
     app: nats
 spec:

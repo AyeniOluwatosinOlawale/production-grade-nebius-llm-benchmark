@@ -6,7 +6,7 @@ echo "================================================"
 echo "  nebius-llm-d-vllm — Deploy"
 echo "================================================"
 
-NAMESPACE="llm-inference"
+NAMESPACE="llm-d-vllm"
 
 echo ""
 echo "==> Applying vLLM PVC..."
@@ -18,12 +18,8 @@ kubectl apply -f vllm/deployment.yaml
 kubectl apply -f vllm/service.yaml
 
 echo ""
-echo "==> Applying llm-d InferencePool and InferenceModel..."
-kubectl apply -f llmd/inferencepool.yaml
-kubectl apply -f llmd/inferencemodel.yaml
-
-echo ""
 echo "==> Applying LiteLLM..."
+kubectl apply -f litellm/secret.yaml
 kubectl apply -f litellm/configmap.yaml
 kubectl apply -f litellm/deployment.yaml
 kubectl apply -f litellm/service.yaml

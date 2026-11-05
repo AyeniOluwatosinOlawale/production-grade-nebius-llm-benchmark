@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dynamo-router
-  namespace: llm-inference
+  namespace: dynamo-vllm
   labels:
     app: dynamo-router
 spec:
@@ -18,19 +18,21 @@ spec:
       containers:
         - name: dynamo-router
           image: nvcr.io/nvidia/ai-dynamo/vllm-runtime:1.6.1
-          command: ["dynamo", "serve"]
-          args: ["--config=/etc/dynamo/pipeline.yaml", "--component=Frontend"]
+          command: ["python3", "-m", "dynamo.frontend"]
+          args:
+            - "--http-host=0.0.0.0"
+            - "--http-port=8080"
+            - "--namespace=dynamo-vllm"
+            - "--enforce-disagg"
+            - "--router-mode=round-robin"
           ports:
             - containerPort: 8080
               name: http
           env:
             - name: NATS_URL
-              value: "nats://nats.llm-inference:4222"
+              value: "nats://nats.dynamo-vllm:4222"
             - name: ETCD_ENDPOINTS
-              value: "etcd.llm-inference:2379"
-          volumeMounts:
-            - name: pipeline-config
-              mountPath: /etc/dynamo
+              value: "etcd.dynamo-vllm:2379"
           resources:
             requests:
               cpu: 1
@@ -45,16 +47,12 @@ spec:
             initialDelaySeconds: 30
             periodSeconds: 10
             failureThreshold: 5
-      volumes:
-        - name: pipeline-config
-          configMap:
-            name: dynamo-pipeline-config
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: dynamo-router
-  namespace: llm-inference
+  namespace: dynamo-vllm
   labels:
     app: dynamo-router
 spec:

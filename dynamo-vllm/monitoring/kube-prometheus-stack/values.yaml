@@ -6,7 +6,7 @@ prometheus:
     storageSpec:
       volumeClaimTemplate:
         spec:
-          storageClassName: nebius-network-ssd
+          storageClassName: compute-csi-default-sc
           accessModes: [ReadWriteOnce]
           resources:
             requests:
@@ -32,7 +32,7 @@ grafana:
   adminPassword: "nebius-llm-bench"
   persistence:
     enabled: true
-    storageClassName: nebius-network-ssd
+    storageClassName: compute-csi-default-sc
     size: 20Gi
   service:
     type: LoadBalancer

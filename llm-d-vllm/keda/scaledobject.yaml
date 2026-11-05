@@ -3,7 +3,7 @@ apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
   name: vllm-qwen3-scaledobject
-  namespace: llm-inference
+  namespace: llm-d-vllm
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
@@ -12,11 +12,11 @@ spec:
 
   # Always keep 2 replicas ready — do NOT let KEDA scale to 0
   # (H100 preemptible cold-start is 5–15 min; test must not wait on node provisioning)
-  minReplicaCount: 2
+  minReplicaCount: 1
   maxReplicaCount: 8
 
   # 5 min cooldown — accounts for preemptible H100 node spin-up
-  cooldownPeriod: 300
+  cooldownPeriod: 60
   pollingInterval: 15
 
   triggers:
@@ -25,7 +25,7 @@ spec:
       metadata:
         serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: vllm_requests_waiting
-        query: sum(vllm:num_requests_waiting{namespace="llm-inference"})
+        query: sum(vllm:num_requests_waiting{namespace="llm-d-vllm"})
         threshold: "5"
         activationThreshold: "1"
 

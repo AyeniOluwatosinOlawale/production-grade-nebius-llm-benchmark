@@ -2,7 +2,7 @@
 # Remove all LLM inference resources (keeps monitoring stack)
 set -euo pipefail
 
-NAMESPACE="llm-inference"
+NAMESPACE="llm-d-vllm"
 
 echo "==> Tearing down nebius-llm-d-vllm inference stack..."
 echo "    (Monitoring stack in 'monitoring' namespace is preserved)"

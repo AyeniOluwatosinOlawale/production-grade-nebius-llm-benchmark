@@ -4,7 +4,7 @@ set -euo pipefail
 
 BASE_URL="${BASE_URL:-http://localhost:4000}"
 ENGINE_LABEL="${ENGINE_LABEL:-vllm-qwen3}"
-NAMESPACE="${NAMESPACE:-llm-inference}"
+NAMESPACE="${NAMESPACE:-llm-d-vllm}"
 RESULTS_DIR="load-test/reports/$(date +%Y%m%d-%H%M%S)"
 
 mkdir -p "$RESULTS_DIR"

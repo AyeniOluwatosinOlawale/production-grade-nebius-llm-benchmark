@@ -8,7 +8,7 @@
 import exec from 'k6/execution';
 
 const ENGINE_LABEL  = __ENV.ENGINE_LABEL  || 'vllm-qwen3';
-const NAMESPACE     = __ENV.NAMESPACE     || 'llm-inference';
+const NAMESPACE     = __ENV.NAMESPACE     || 'llm-d-vllm';
 const MIN_REPLICAS  = parseInt(__ENV.MIN_REPLICAS || '2', 10);
 
 export const options = {
@@ -21,5 +21,5 @@ export default function () {
   // kubectl in the shell wrapper (see scripts/run-load-test.sh).
   // k6 does not have native kubectl exec capability.
   console.log(`[verify-replicas] Checking: app=${ENGINE_LABEL} namespace=${NAMESPACE} minReplicas=${MIN_REPLICAS}`);
-  console.log('[verify-replicas] Delegate to shell: kubectl get pods -n llm-inference -l app=vllm-qwen3');
+  console.log('[verify-replicas] Delegate to shell: kubectl get pods -n llm-d-vllm -l app=vllm-qwen3');
 }

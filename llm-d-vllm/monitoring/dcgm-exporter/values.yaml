@@ -54,7 +54,7 @@ tolerations:
     effect: NoSchedule
 
 nodeSelector:
-  nvidia.com/gpu.present: "true"
+  nebius.com/gpu: "true"
 
 podAnnotations:
   prometheus.io/scrape: "true"

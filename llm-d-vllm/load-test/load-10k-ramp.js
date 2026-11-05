@@ -296,7 +296,7 @@ function sendRequest(workloadKey, sleepSecs) {
       stream: true,
     }),
     {
-      headers: { 'Content-Type': 'application/json', 'Accept': 'text/event-stream' },
+      headers: { 'Content-Type': 'application/json', 'Accept': 'text/event-stream', 'Authorization': `Bearer ${__ENV.API_KEY || 'sk-nebius-bench-1234'}` },
       timeout: '180s',
     }
   );
