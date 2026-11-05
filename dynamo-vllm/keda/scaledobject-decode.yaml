@@ -17,13 +17,6 @@ spec:
       metadata:
         serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
         metricName: vllm_requests_waiting_decode
-        query: sum(vllm:num_requests_waiting{namespace="dynamo-vllm", pod=~"vllm-decode-.*"})
-        threshold: "5"
-        activationThreshold: "1"
-    - type: prometheus
-      metadata:
-        serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
-        metricName: gpu_util_decode
-        query: avg(DCGM_FI_DEV_GPU_UTIL)
-        threshold: "70"
-        activationThreshold: "50"
+        query: sum(vllm:num_requests_waiting{pod=~"vllm-decode-.*"})
+        threshold: "1"
+        activationThreshold: "0"

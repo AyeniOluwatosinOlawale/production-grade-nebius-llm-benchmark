@@ -16,7 +16,7 @@ spec:
     - type: prometheus
       metadata:
         serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
-        metricName: gpu_util_prefill
-        query: avg(DCGM_FI_DEV_GPU_UTIL)
-        threshold: "70"
-        activationThreshold: "50"
+        metricName: vllm_requests_waiting_prefill
+        query: sum(vllm:num_requests_waiting{pod=~"vllm-prefill-.*"})
+        threshold: "1"
+        activationThreshold: "0"
