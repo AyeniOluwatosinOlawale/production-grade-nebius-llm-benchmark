@@ -66,11 +66,9 @@ spec:
             - --max-model-len=32768
             - --gpu-memory-utilization=0.85
             - --served-model-name=qwen3-27b
-            - --port=8000
-            - --host=0.0.0.0
             - --max-num-seqs=64
             - --disaggregation-mode=prefill
-            - --kv-transfer-config={"kv_connector":"NixlConnector","kv_role":"kv_producer"}
+            - '--kv-transfer-config={"kv_connector":"NixlConnector","kv_role":"kv_producer"}'
           resources:
             requests:
               nvidia.com/gpu: "2"
