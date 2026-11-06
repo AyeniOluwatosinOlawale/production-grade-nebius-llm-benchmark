@@ -37,7 +37,7 @@
 
 ---
 
-## Dynamo + vLLM (Run 1 — INVALID)
+## Dynamo + vLLM (Run 1 — Router Discovery Bug, Pending Fix)
 
 **Config:** 4 GPUs (2 prefill + 2 decode), NATS, etcd, 3 LiteLLM replicas  
 **Result:** 100% failure — Dynamo router returned 404 for all requests
