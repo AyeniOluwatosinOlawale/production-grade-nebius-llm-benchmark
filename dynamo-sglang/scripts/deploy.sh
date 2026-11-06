@@ -14,6 +14,7 @@ kubectl rollout status deployment/etcd -n "$NAMESPACE" --timeout=2m
 kubectl apply -f dynamo/prefill.yaml
 kubectl apply -f dynamo/decode.yaml
 kubectl apply -f dynamo/router.yaml
+kubectl apply -f litellm/secret.yaml
 kubectl apply -f litellm/configmap.yaml
 kubectl apply -f litellm/deployment.yaml
 kubectl apply -f litellm/service.yaml

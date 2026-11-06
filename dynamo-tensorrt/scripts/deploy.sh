@@ -10,6 +10,7 @@ kubectl apply -f dynamo/decode.yaml
 kubectl apply -f dynamo/router.yaml
 kubectl apply -f dynamo/service.yaml
 kubectl apply -f tensorrt/service.yaml
+kubectl apply -f litellm/secret.yaml
 kubectl apply -f litellm/configmap.yaml
 kubectl apply -f litellm/deployment.yaml
 kubectl apply -f litellm/service.yaml
