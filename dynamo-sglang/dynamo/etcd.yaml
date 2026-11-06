@@ -23,7 +23,7 @@ spec:
             - name: ALLOW_NONE_AUTHENTICATION
               value: "yes"
             - name: ETCD_ADVERTISE_CLIENT_URLS
-              value: "http://0.0.0.0:2379"
+              value: "http://etcd.llm-inference:2379"
             - name: ETCD_LISTEN_CLIENT_URLS
               value: "http://0.0.0.0:2379"
           ports:
