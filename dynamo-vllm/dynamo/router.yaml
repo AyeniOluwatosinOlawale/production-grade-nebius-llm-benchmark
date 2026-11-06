@@ -6,7 +6,7 @@ metadata:
   labels:
     app: dynamo-router
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: dynamo-router
@@ -25,6 +25,7 @@ spec:
             - "--namespace=dynamo-vllm"
             - "--enforce-disagg"
             - "--router-mode=round-robin"
+            - "--model=qwen3-27b"
           ports:
             - containerPort: 8080
               name: http
