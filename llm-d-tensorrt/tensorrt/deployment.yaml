@@ -37,7 +37,7 @@ spec:
       containers:
         - name: tensorrt
           # trtllm-serve: serves directly from HuggingFace weights (no engine pre-build)
-          image: nvcr.io/nvidia/tritonserver:26.10-trtllm-python-py3
+          image: nvcr.io/nvidia/tritonserver:25.01-trtllm-python-py3
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
@@ -54,7 +54,7 @@ spec:
                   optional: true
           command: ["trtllm-serve"]
           args:
-            - Qwen/Qwen3-27B
+            - Qwen/Qwen3-32B
             - --tp=2
             - --dtype=bfloat16
             - --max_seq_len=32768

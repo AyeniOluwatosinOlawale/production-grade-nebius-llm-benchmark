@@ -1,10 +1,10 @@
 apiVersion: inference.networking.x-k8s.io/v1alpha2
 kind: InferenceModel
 metadata:
-  name: qwen3-27b
+  name: qwen3-32b
   namespace: llm-inference
 spec:
-  modelName: qwen3-27b
+  modelName: qwen3-32b
   criticality: Default
   poolRef:
     name: qwen3-pool

@@ -16,10 +16,10 @@ spec:
     - type: prometheus
       metadata:
         serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090
-        metricName: sglang_requests_waiting
+        metricName: sglang:num_requests_waiting
         query: sum(sglang:num_requests_waiting{namespace="llm-inference"})
-        threshold: "5"
-        activationThreshold: "1"
+        threshold: "1"
+        activationThreshold: "0"
     - type: prometheus
       metadata:
         serverAddress: http://kube-prometheus-stack-prometheus.monitoring:9090

@@ -6,7 +6,7 @@ metadata:
   labels:
     app: litellm
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: litellm
@@ -51,7 +51,7 @@ spec:
               mountPath: /etc/litellm
           readinessProbe:
             httpGet:
-              path: /health/liveliness
+              path: /health/readiness
               port: 4000
             initialDelaySeconds: 15
             periodSeconds: 10
