@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-05  
 **Hardware:** 8× H100 SXM5 (preemptible), Nebius eu-north1  
-**Model:** Qwen/Qwen3-32B, tp=2, BF16, max_model_len=32768  
+**Model:** Qwen/Qwen3-27B, tp=2, BF16, max_model_len=32768  
 **Gateway:** LiteLLM 3 replicas → engine  
 
 ---
