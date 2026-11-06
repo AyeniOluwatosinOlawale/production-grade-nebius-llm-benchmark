@@ -49,11 +49,11 @@ spec:
                   optional: true
           command: ["python3", "-m", "sglang.launch_server"]
           args:
-            - --model-path=Qwen/Qwen3-32B
+            - --model-path=Qwen/Qwen3-27B
             - --tp=2
             - --dtype=bfloat16
             - --max-prefill-tokens=32768
-            - --served-model-name=qwen3-32b
+            - --served-model-name=qwen3-27b
             - --port=30000
             - --host=0.0.0.0
             - --enable-metrics

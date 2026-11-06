@@ -6,9 +6,9 @@ metadata:
 data:
   config.yaml: |
     model_list:
-      - model_name: qwen3-32b
+      - model_name: qwen3-27b
         litellm_params:
-          model: openai/qwen3-32b
+          model: openai/qwen3-27b
           api_base: http://llmd-gateway.llm-inference:80/v1
           api_key: "none"
           timeout: 120

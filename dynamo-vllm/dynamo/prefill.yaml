@@ -60,7 +60,7 @@ spec:
             - name: DYNAMO_NAMESPACE
               value: "dynamo-vllm"
           args:
-            - --model=Qwen/Qwen3-32B
+            - --model=Qwen/Qwen3-27B
             - --tensor-parallel-size=2
             - --dtype=bfloat16
             - --max-model-len=32768

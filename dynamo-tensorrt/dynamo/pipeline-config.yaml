@@ -13,7 +13,7 @@ data:
       TrtllmWorker:
         type: TrtllmWorker
         config:
-          model: "Qwen/Qwen3-32B"
+          model: "Qwen/Qwen3-27B"
           tp: 2
           disaggregated_prefill: true
           prefill_queue: "nats://nats.llm-inference:4222"

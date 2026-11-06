@@ -6,7 +6,7 @@ metadata:
 data:
   pipeline.yaml: |
     Common:
-      model: Qwen/Qwen3-32B
+      model: Qwen/Qwen3-27B
       block_size: 16
       dtype: bfloat16
       tensor_parallel_size: 2

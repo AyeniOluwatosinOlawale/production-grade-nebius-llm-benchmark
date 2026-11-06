@@ -54,7 +54,7 @@ spec:
                   optional: true
           command: ["trtllm-serve"]
           args:
-            - Qwen/Qwen3-32B
+            - Qwen/Qwen3-27B
             - --tp=2
             - --dtype=bfloat16
             - --max_seq_len=32768
